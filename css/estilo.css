@@ -19,7 +19,7 @@ body {
 *** Abertura - Menu *** 
 */
 #area-cabecalho {
-    background-color: #00a2ff;
+    background: linear-gradient(120deg, #54B9BB, #1AABAD, #75F8FA);
     padding: 20px;
 }
 
@@ -39,13 +39,13 @@ body {
 */
 
 #area-principal {
-    width: 920px;
+    width: 1280px;
     padding: 15px;
     margin: 0 auto;
 }
 
-#area-dashboard {
-    width: 660px;
+#area-conteudos {
+    width: 720px;
     float: left;
     
 }
@@ -60,7 +60,7 @@ body {
     clear: both;
     text-align: center;
     padding: 15px;
-    background: #ccc;
+    background: linear-gradient(120deg, #54B9BB, #1AABAD, #75F8FA);
     
 }
 
@@ -95,7 +95,7 @@ a {
 */
 
 a:link, a:visited {
-    color: #00a2ff;
+    color: #1AABAD;
 }
 
 a:hover {
@@ -112,7 +112,7 @@ a:hover {
 }
 
 #area-cabecalho a:hover {
-    color: #00a2ff;
+    color: #1AABAD;
     background: #fff;
     text-decoration: none;
 }
@@ -127,7 +127,7 @@ h1 {
 }
 
 h2 {
-    color: #00a2ff;
+    color: #1AABAD;
 }
 
 h3 {
@@ -159,8 +159,8 @@ h3 {
 /* variaveis de cor*/
 
 :root{
-    --input-linear: linear-gradient(120deg, #dbc4ff, #7ee5f6);
-    --button-linear: linear-gradient(120deg, #dbc4ff, #7ee5f6, #dbc4ff);
+    --input-linear: linear-gradient(120deg, #137F80, #75F8FA);
+    --button-linear: linear-gradient(120deg, #54B9BB, #1AABAD, #75F8FA);
     --white:#fff;
     --black: #303030;
     }
@@ -234,7 +234,7 @@ h3 {
     height: 48px;
     width: 100%;
     outline: none;
-    background: linear-gradient(120deg, #dbc4ff, #7ee5f6, #dbc4ff);
+    background: linear-gradient(120deg, #54B9BB, #1AABAD, #75F8FA);
     background-size: 200%;
     margin-bottom: 32px;
     color:var(--white);
