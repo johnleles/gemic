@@ -151,3 +151,116 @@ h3 {
 .caixa {
     font-size: 50px;
 }
+
+/*
+*** FORMATAÇÃO DO LOGIN ***
+*/
+
+/* variaveis de cor*/
+
+:root{
+    --input-linear: linear-gradient(120deg, #dbc4ff, #7ee5f6);
+    --button-linear: linear-gradient(120deg, #dbc4ff, #7ee5f6, #dbc4ff);
+    --white:#fff;
+    --black: #303030;
+    }
+    
+    .login {
+    height: 100vh;
+    background: var(--input-linear);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    .login_container{
+    min-height: 450px;
+    width: 350px;
+    background-color: var(--white);
+    box-sizing: border-box;
+    padding: 32px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    }
+    
+    .login_titulo {
+    margin-bottom: 32px;
+    color: var(--black);
+    
+    }
+    
+    .login_form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    }
+    
+    .login_input {
+    height: 48px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 8px;
+    border: unset;
+    outline: none;
+    }
+    
+    
+    .login_input_border{
+    height: 1px;
+    width: 100%;
+    margin-bottom: 16px;
+    background-color: #cfcfcf;
+    transition: ease-in-out;
+    
+    }
+    
+    .login_input_border::after {
+        content: '';
+        display: block;
+        height: 1px;
+        width: 0px;
+        margin-bottom: 0;
+        background: var(--input-linear);
+        transition: .3s ease-in-out;
+    }
+    
+    .login_input:focus + .login_input_border::after{
+    width: 100%;
+    
+    
+    }
+    
+    .login_submit {
+    height: 48px;
+    width: 100%;
+    outline: none;
+    background: linear-gradient(120deg, #dbc4ff, #7ee5f6, #dbc4ff);
+    background-size: 200%;
+    margin-bottom: 32px;
+    color:var(--white);
+    font-size: 16px;
+    font-weight: bold;
+    border: unset;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.5s, ease;
+    
+    }
+    
+    .login_submit:hover{
+    background-position: right;
+    
+    }
+    
+    .login_reset {
+    font-size: 13px;
+    color: #929292;
+    text-decoration: none;
+    
+    }
