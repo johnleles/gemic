@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>GEMIC - Suporte</title>
+        <title>GEMIC - Administrativo</title>
         <link rel="stylesheet" type="text/css" href="css/estilo.css">
     </head>
 <body>
@@ -14,11 +14,11 @@
         </div>
 
         <div id="area-menu">
-            <a href="index.html"> <strong>DASHBOARD</strong></a>
-            <a href="administrativo.html"> <strong>ADMINISTRATIVO</strong> </a>
-            <a href="financeiro.html"> <strong>FINANCEIRO</strong> </a>
-            <a href="suporte.html"> <strong>SUPORTE</strong> </a>
-            <a href="login.html"> <strong>SAIR</strong></a>
+            <a href="index.html"> <strong>Dashboard</strong></a>
+            <a href="administrativo.html"> <strong>Administrativo</strong></a>
+            <a href="financeiro.html"> <strong>Financeiro</strong></a>
+            <a href="suporte.html"> <strong>Suporte</strong></a>
+            <a href="login.html"> <strong>Sair</strong></a>
         </div>
     </div>
     <!-- Cabeçalho - Fim -->    
@@ -28,47 +28,52 @@
         <div id="area-conteudos">
             <div class="postagem">
                 <h2>Suporte</h2>
-                    <span class="data-postagem"> Acessado em 15 de Maio de 2022. </span>
-
-                    <img width="620px" src="imagens/imagem3.jpg">
-                    <p> Lorem Ipsum is simply dummy text of the 
-                        printing and typesetting industry. Lorem Ipsum 
-                        has been the industry's standard dummy text 
-                        ever since the 1500s, when an unknown printer
-                        took a galley of type and scrambled it to make 
-                        a type specimen book. It has survived not only 
-                        five centuries, but also the leap into electronic 
-                        typesetting, remaining essentially unchanged. </p> <br>
-                    <a href="">Acessar</a>
+                <img width="620px" src="imagens/imagem-suporte.png">
+                <form class="login_form">
+                    <input class="login_input" type="text" placeholder="Nome">
+                      <span class="login_input_border"></span>
+                      <input class="login_input" type="email" placeholder="E-mail">
+                      <span class="login_input_border"></span>
+                      <input class="login_input" type="text" placeholder="Categoria de Suporte">
+                      <span class="login_input_border"></span>
+                      <input class="login_input" type="text" placeholder="Assunto">
+                      <span class="login_input_border"></span>
+                      <input class="login_input" type="text" placeholder="Descrição">
+                      <span class="login_input_border"></span>
+                      <input class="login_input" type="file">
+                      <span class="login_input_border"></span>
+                      <button class="login_submit">Enviar</button>
+                    </form>
             </div>
         </div>
-            
+
     <!-- Área - Lateral -->
-        <div id="area-lateral">
+    <div id="area-lateral">
             
-            <div class="conteudo-lateral">
-                <h3> Receita </h3>
-                <div class="postagem-lateral">
-                    <p class="caixa">R$ 0,00</p> <br>
-                    <a href="">Leia mais</a>
-                </div>
-
-                <div class="postagem-lateral" style="border-bottom: none;">
-                    <p>Lorem Ipsum is simply dummy text of the 
-                    printing and typesetting industry Ipsum is simply dummy text of the.</p> <br>
-                    <a href="">Leia mais</a>
-                </div>
+        <div class="conteudo-lateral">
+            <h3> Contato </h3>
+            <div class="postagem-lateral">
+                <p></p> (11) 4444-4444 </p>
+                <p></p> <br>
+                <a href="">Leia mais</a>
             </div>
 
-            <div class="conteudo-lateral">
-                <h3> Categorias </h3>
-                
-                <a href="">Administrativo</a> <br>
-                <a href="">Cadastros</a> <br>
-                <a href="">Suporte</a> <br>
-                <a href="">Ponto Eletrônico</a>
+            <div class="postagem-lateral" style="border-bottom: none;">
+                <p>Lorem Ipsum is simply dummy text of the 
+                printing and typesetting industry Ipsum is simply dummy text of the.</p> <br>
+                <a href="">Leia mais</a>
             </div>
         </div>
+
+        <div class="conteudo-lateral">
+            <h3> Categorias </h3>
+            <a href="">Administrativo</a> <br>
+            <a href="">Cadastros</a> <br>
+            <a href="">Suporte</a> <br>
+            <a href="">Ponto Eletrônico</a>
+        </div>
+    </div>
+            
 
     <!-- Área - Rodapé -->
         <div id="rodape">

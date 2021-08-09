@@ -53,6 +53,7 @@ body {
 #area-lateral {
     width: 240px;
     float: right;
+        
 
 }
 
@@ -61,25 +62,28 @@ body {
     text-align: center;
     padding: 15px;
     background: linear-gradient(120deg, #54B9BB, #1AABAD, #75F8FA);
-    
+    border-radius: 10px;   
 }
 
 .postagem {
     padding: 20px;
     margin-bottom: 20px;
     background: white;
+    border-radius: 8px;
 }
 
 .conteudo-lateral {
     background: white;
     padding: 10px;
     margin-bottom: 20px;
+    border-radius: 10px;
 }
 
 .postagem-lateral {
     font-size: 0.8em;
     padding: 5px;
     border-bottom: 1px dotted #ccc;
+    border-radius: 10px;
 }
 
 /*
@@ -88,6 +92,7 @@ body {
 
 a {
     text-decoration: none;
+    font-size: 20px;
 }
 
 /*
@@ -109,6 +114,7 @@ a:hover {
 #area-cabecalho a:link, #area-cabecalho a:visited {
     color: #fff;
     padding: 8px 12px;
+    border-radius: 10px;
 }
 
 #area-cabecalho a:hover {
@@ -131,8 +137,7 @@ h2 {
 }
 
 h3 {
-    color: #565656;
-    background: #ccc;
+    color: #1AABAD;
     padding: 5px;
 }
 
@@ -148,12 +153,8 @@ h3 {
     display: block;
 }
 
-.caixa {
-    font-size: 50px;
-}
-
 /*
-*** FORMATAÇÃO DO LOGIN ***
+*** FORMATAÇÃO DA PÁGINA DE LOGIN ***
 */
 
 /* variaveis de cor*/
