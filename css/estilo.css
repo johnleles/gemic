@@ -31,7 +31,7 @@ body {
 
 #area-menu {
     padding: 10px;
-    text-align: center;
+    text-align: right;
 }
 
 /*
@@ -231,11 +231,11 @@ h3 {
     width: 100%;
     }
     
-    .login_submit {
+    button {
     height: 48px;
     width: 100%;
     outline: none;
-    background: linear-gradient(120deg, #54B9BB, #1AABAD, #75F8FA);
+    background: linear-gradient(120deg, #75F8FA, #1AABAD, #75F8FA);
     background-size: 200%;
     margin-bottom: 32px;
     color:var(--white);
@@ -244,10 +244,10 @@ h3 {
     border: unset;
     border-radius: 4px;
     cursor: pointer;
-    transition: 0.5s, ease;
+    transition: 0.15s, ease;
     }
     
-    .login_submit:hover{
+    button:hover{
     background-position: right;
     }
     
