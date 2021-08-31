@@ -399,3 +399,78 @@ h3 {
         .senha_input:focus + .senha_input_border::after{
         width: 100%;
         }   
+
+        /* Pagina do ESTOQUE */
+
+table{
+    clear:both;
+    background: linear-gradient(120deg, #54B9BB, #1AABAD, #75F8FA); 
+    background-color: white;
+    border-radius: 10px; 
+    color:white;
+    padding:10px;
+    width:400px;
+    margin:auto;
+    margin-top: 10px;
+    }
+    
+    caption {
+        color:rgb(213,97,100); 
+        font-weight: bold; 
+        font-size: 25px;
+    }
+    
+    caption{
+        color: #1AABAD;
+    }
+    
+    .alinharRotulos {
+        text-align: right;
+    }
+    .alinhaBtns {
+        width:30%;
+        background: linear-gradient(120deg, #54B9BB, #1AABAD, #75F8FA); 
+        background-color: #1AABAD;
+        color:white;
+        border:0px;
+        padding:5px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 3px;
+        font-weight: 700;
+    }
+    
+    .armazenamento{
+        width:300px; 
+        float:right;  
+        color: white;
+    }
+    .armazenamento p{
+        display: inline;
+        position: absolute;
+        margin-top: 50px;
+        padding: 5px; 
+        background: linear-gradient(120deg, #54B9BB, #1AABAD, #75F8FA); 
+        border-radius: 5px;
+        font-weight: 700;
+    
+    }
+    
+     .alinhaBtns:hover{
+        color: #1AABAD;
+        background: #fff;
+        text-decoration: none;
+     }
+    /*
+    .carrinho{
+        display: inline;
+        color: white;
+        position: absolute;
+        margin-top: 100px;
+        padding: 5px; 
+        background: linear-gradient(120deg, #54B9BB, #1AABAD, #75F8FA); 
+        border-radius: 5px;
+        font-weight: 700;
+        border-style: solid;    
+    }
+    */
