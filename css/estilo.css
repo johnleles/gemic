@@ -1,0 +1,333 @@
+/* Limpar formatações padrão */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 1em;
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    background: #e6e6e6;
+}
+
+/*
+*** Layout ***
+*/
+
+/*
+*** Abertura - Menu *** 
+*/
+#area-cabecalho {
+    background: linear-gradient(120deg, #54B9BB, #1AABAD, #75F8FA);
+    padding: 20px;
+}
+
+#area-logo {
+    text-align: left;
+    float: left;
+}
+
+
+#area-menu {
+    padding: 10px;
+    text-align: center;
+}
+
+/*
+*** Fechamento - Menu *** 
+*/
+
+#area-principal {
+    width: 920px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+#area-conteudos {
+    width: 660px;
+    float: left;
+    
+}
+
+#area-lateral {
+    width: 240px;
+    float: right;
+        
+
+}
+
+#rodape {
+    clear: both;
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(120deg, #54B9BB, #1AABAD, #75F8FA);
+    border-radius: 10px;   
+}
+
+.postagem {
+    padding: 20px;
+    margin-bottom: 20px;
+    background: white;
+    border-radius: 8px;
+}
+
+.conteudo-lateral {
+    background: white;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.postagem-lateral {
+    font-size: 0.8em;
+    padding: 5px;
+    border-bottom: 1px dotted #ccc;
+    border-radius: 10px;
+}
+
+/*
+*** Formatação do Menu ***
+*/
+
+a {
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/*
+*** Formatação de Link's Gerais ***
+*/
+
+a:link, a:visited {
+    color: #1AABAD;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/*
+*** Formatação de Links do Cabeçalho ***
+*/
+
+#area-cabecalho a:link, #area-cabecalho a:visited {
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 10px;
+}
+
+#area-cabecalho a:hover {
+    color: #1AABAD;
+    background: #fff;
+    text-decoration: none;
+}
+
+/*
+*** Formatações Gerais ***
+*/
+
+h1 {
+    color: #4e4e4e;
+    font-size: 2.5em;
+}
+
+h2 {
+    color: #1AABAD;
+}
+
+h3 {
+    color: #1AABAD;
+    padding: 5px;
+}
+
+.branco {
+    color: white;
+}
+
+.data-postagem {
+    font-size: 0.8em;
+    border-bottom: 1px solid #f4f4f4;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/*
+*** FORMATAÇÃO DA PÁGINA DE LOGIN ***
+*/
+
+/* variaveis de cor*/
+
+:root{
+    --input-linear: linear-gradient(120deg, #137F80, #75F8FA);
+    --button-linear: linear-gradient(120deg, #54B9BB, #1AABAD, #75F8FA);
+    --white:#fff;
+    --black: #303030;
+    }
+    
+    .login {
+    height: 100vh;
+    background: var(--input-linear);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    .login_container{
+    min-height: 450px;
+    width: 350px;
+    background-color: var(--white);
+    box-sizing: border-box;
+    padding: 32px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    
+    .login_titulo {
+    margin-bottom: 32px;
+    color: var(--black);
+    }
+    
+    .login_form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+    
+    .login_input {
+    height: 48px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 8px;
+    border: unset;
+    outline: none;
+    }
+    
+    
+    .login_input_border{
+    height: 1px;
+    width: 100%;
+    margin-bottom: 16px;
+    background-color: #cfcfcf;
+    transition: ease-in-out; 
+    }
+    
+    .login_input_border::after {
+        content: '';
+        display: block;
+        height: 1px;
+        width: 0px;
+        margin-bottom: 0;
+        background: var(--input-linear);
+        transition: .3s ease-in-out;
+    }
+    
+    .login_input:focus + .login_input_border::after{
+    width: 100%;
+    }
+    
+    .login_submit, .cadastrar_submit{
+    height: 48px;
+    width: 100%;
+    outline: none;
+    background: linear-gradient(120deg, #54B9BB, #1AABAD, #75F8FA);
+    background-size: 200%;
+    margin-bottom: 32px;
+    color:var(--white);
+    font-size: 16px;
+    font-weight: bold;
+    border: unset;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.5s, ease;
+    }
+    
+    .login_submit:hover{
+    background-position: right;
+    }
+    
+    .login_reset {
+    font-size: 15px;
+    color: #929292;
+    text-decoration: none;
+    }
+
+    /* Pagina do ESTOQUE */
+
+table{
+clear:both;
+background: linear-gradient(120deg, #54B9BB, #1AABAD, #75F8FA); 
+/*background-color: white; rgb(213,97,100);*/
+border-radius: 10px; 
+color:white;
+padding:10px;
+width:400px;
+margin:auto;
+margin-top: 10px;
+}
+
+caption {
+    color:rgb(213,97,100); 
+    font-weight: bold; 
+    font-size: 25px;
+}
+
+caption{
+    color: #1AABAD;
+}
+
+.alinharRotulos {
+    text-align: right;
+}
+.alinhaBtns {
+    width:30%;
+    /*background: linear-gradient(120deg, #54B9BB, #1AABAD, #75F8FA);*/ 
+    background-color: #1AABAD;
+    color:white;
+    border:0px;
+    padding:5px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 3px;
+    font-weight: 700;
+}
+
+.armazenamento{
+    width:300px; 
+    float:right;  
+    color: white;
+}
+.armazenamento p{
+    display: inline;
+    position: absolute;
+    margin-top: 50px;
+    padding: 5px; 
+    background: linear-gradient(120deg, #54B9BB, #1AABAD, #75F8FA); 
+    border-radius: 5px;
+    font-weight: 700;
+
+}
+
+ .alinhaBtns:hover{
+    color: #1AABAD;
+    background: #fff;
+    text-decoration: none;
+ }
+/*
+.carrinho{
+    display: inline;
+    color: white;
+    position: absolute;
+    margin-top: 100px;
+    padding: 5px; 
+    background: linear-gradient(120deg, #54B9BB, #1AABAD, #75F8FA); 
+    border-radius: 5px;
+    font-weight: 700;
+    border-style: solid;    
+}
+*/
