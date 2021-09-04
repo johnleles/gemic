@@ -31,7 +31,7 @@ body {
 
 #area-menu {
     padding: 10px;
-    text-align: right;
+    text-align: center;
 }
 
 /*
@@ -166,7 +166,6 @@ h3 {
     --black: #303030;
     }
     
-    /* configurações da pafina de login */
     .login {
     height: 100vh;
     background: var(--input-linear);
@@ -174,7 +173,7 @@ h3 {
     justify-content: center;
     align-items: center;
     }
-     /* configurações do container (parte branca) */
+    
     .login_container{
     min-height: 450px;
     width: 350px;
@@ -186,14 +185,12 @@ h3 {
     flex-direction: column;
     align-items: center;
     }
-
-    /* config tituilo */
+    
     .login_titulo {
     margin-bottom: 32px;
     color: var(--black);
     }
     
-    /* config form*/
     .login_form {
     width: 100%;
     display: flex;
@@ -202,7 +199,6 @@ h3 {
     justify-content: center;
     }
     
-    /* config inputs*/
     .login_input {
     height: 48px;
     width: 100%;
@@ -212,7 +208,7 @@ h3 {
     outline: none;
     }
     
-    /*config linha do span */
+    
     .login_input_border{
     height: 1px;
     width: 100%;
@@ -221,7 +217,6 @@ h3 {
     transition: ease-in-out; 
     }
     
-    /*animação da linha*/
     .login_input_border::after {
         content: '';
         display: block;
@@ -229,19 +224,18 @@ h3 {
         width: 0px;
         margin-bottom: 0;
         background: var(--input-linear);
-        transition: .10s ease-in-out;
+        transition: .3s ease-in-out;
     }
     
     .login_input:focus + .login_input_border::after{
     width: 100%;
     }
     
-    /*config do botão entrar */
-    button {
+    .login_submit, .cadastrar_submit{
     height: 48px;
     width: 100%;
     outline: none;
-    background: linear-gradient(120deg, #75F8FA, #1AABAD, #75F8FA);
+    background: linear-gradient(120deg, #54B9BB, #1AABAD, #75F8FA);
     background-size: 200%;
     margin-bottom: 32px;
     color:var(--white);
@@ -250,10 +244,10 @@ h3 {
     border: unset;
     border-radius: 4px;
     cursor: pointer;
-    transition: 0.15s, ease;
+    transition: 0.5s, ease;
     }
     
-    button:hover{
+    .login_submit:hover{
     background-position: right;
     }
     
@@ -263,214 +257,77 @@ h3 {
     text-decoration: none;
     }
 
-    /* formatação pagina alterar minha senha */
-
-    /* config do container */
-    .login_container_senha{
-        min-height: 150px;
-        width: 350px;
-        background-color: var(--white);
-        box-sizing: border-box;
-        padding: 32px;
-        border-radius: 8px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        }
-
-        /* config da pagina senha*/
-        .login_senha{
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            }
-
-            .senha {
-                height: 100vh;
-                background: var(--input-linear);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                }
-/* config titulo*/
-        .senha_titulo {
-    margin-bottom: 32px;
-    color: var(--black);
-    }
-    
-    /* config form senha*/
-    .senha_form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    }
-    
-    /* config inputs*/
-    .senha_input {
-    height: 48px;
-    width: 100%;
-    box-sizing: border-box;
-    padding-left: 8px;
-    border: unset;
-    outline: none;
-    }
-    
-    /* config e animações da linha*/
-    .senha_input_border{
-    height: 1px;
-    width: 100%;
-    margin-bottom: 16px;
-    background-color: #cfcfcf;
-    transition: ease-in-out; 
-    }
-    
-    .senha_input_border::after {
-        content: '';
-        display: block;
-        height: 1px;
-        width: 0px;
-        margin-bottom: 0;
-        background: var(--input-linear);
-        transition: .10s ease-in-out;
-    }
-       
-   
-    .senha_input:focus + .login_input_border::after{
-    width: 100%;
-    }
-    
-     /* config titulo */
-    .senha_titulo {
-        margin-bottom: 32px;
-        color: var(--black);
-        }
-        
-         /*config form */
-        .senha_form {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        }
-        
-         /*config inpputs */
-        .senha_input {
-        height: 48px;
-        width: 100%;
-        box-sizing: border-box;
-        padding-left: 8px;
-        border: unset;
-        outline: none;
-        }
-
-        .repetir_senha_input {
-         height: 48px;
-            width: 100%;
-            box-sizing: border-box;
-            padding-left: 8px;
-            border: unset;
-            outline: none;
-            }
-        
-         /* config linha*/
-         .senha_input_border{
-        height: 1px;
-        width: 100%;
-        margin-bottom: 16px;
-        background-color: #cfcfcf;
-        transition: ease-in-out; 
-        }
-        
-        .senha_input_border::after {
-            content: '';
-            display: block;
-            height: 1px;
-            width: 0px;
-            margin-bottom: 0;
-            background: var(--input-linear);
-            transition: .10s ease-in-out;
-        }
-        
-        .senha_input:focus + .senha_input_border::after{
-        width: 100%;
-        }   
-
-        /* Pagina do ESTOQUE */
+    /* Pagina do ESTOQUE */
 
 table{
-    clear:both;
-    background: linear-gradient(120deg, #54B9BB, #1AABAD, #75F8FA); 
-    background-color: white;
-    border-radius: 10px; 
+clear:both;
+background: linear-gradient(120deg, #54B9BB, #1AABAD, #75F8FA); 
+/*background-color: white; rgb(213,97,100);*/
+border-radius: 10px; 
+color:white;
+padding:10px;
+width:400px;
+margin:auto;
+margin-top: 10px;
+}
+
+caption {
+    color:rgb(213,97,100); 
+    font-weight: bold; 
+    font-size: 25px;
+}
+
+caption{
+    color: #1AABAD;
+}
+
+.alinharRotulos {
+    text-align: right;
+}
+.alinhaBtns {
+    width:30%;
+    /*background: linear-gradient(120deg, #54B9BB, #1AABAD, #75F8FA);*/ 
+    background-color: #1AABAD;
     color:white;
-    padding:10px;
-    width:400px;
-    margin:auto;
-    margin-top: 10px;
-    }
-    
-    caption {
-        color:rgb(213,97,100); 
-        font-weight: bold; 
-        font-size: 25px;
-    }
-    
-    caption{
-        color: #1AABAD;
-    }
-    
-    .alinharRotulos {
-        text-align: right;
-    }
-    .alinhaBtns {
-        width:30%;
-        background: linear-gradient(120deg, #54B9BB, #1AABAD, #75F8FA); 
-        background-color: #1AABAD;
-        color:white;
-        border:0px;
-        padding:5px;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-top: 3px;
-        font-weight: 700;
-    }
-    
-    .armazenamento{
-        width:300px; 
-        float:right;  
-        color: white;
-    }
-    .armazenamento p{
-        display: inline;
-        position: absolute;
-        margin-top: 50px;
-        padding: 5px; 
-        background: linear-gradient(120deg, #54B9BB, #1AABAD, #75F8FA); 
-        border-radius: 5px;
-        font-weight: 700;
-    
-    }
-    
-     .alinhaBtns:hover{
-        color: #1AABAD;
-        background: #fff;
-        text-decoration: none;
-     }
-    /*
-    .carrinho{
-        display: inline;
-        color: white;
-        position: absolute;
-        margin-top: 100px;
-        padding: 5px; 
-        background: linear-gradient(120deg, #54B9BB, #1AABAD, #75F8FA); 
-        border-radius: 5px;
-        font-weight: 700;
-        border-style: solid;    
-    }
-    */
+    border:0px;
+    padding:5px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 3px;
+    font-weight: 700;
+}
+
+.armazenamento{
+    width:300px; 
+    float:right;  
+    color: white;
+}
+.armazenamento p{
+    display: inline;
+    position: absolute;
+    margin-top: 50px;
+    padding: 5px; 
+    background: linear-gradient(120deg, #54B9BB, #1AABAD, #75F8FA); 
+    border-radius: 5px;
+    font-weight: 700;
+
+}
+
+ .alinhaBtns:hover{
+    color: #1AABAD;
+    background: #fff;
+    text-decoration: none;
+ }
+/*
+.carrinho{
+    display: inline;
+    color: white;
+    position: absolute;
+    margin-top: 100px;
+    padding: 5px; 
+    background: linear-gradient(120deg, #54B9BB, #1AABAD, #75F8FA); 
+    border-radius: 5px;
+    font-weight: 700;
+    border-style: solid;    
+}
+*/

@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>GEMIC - Administrativo</title>
-        <link rel="stylesheet" type="text/css" href="css/estilo.css">
-         <!--favicon -->
-    <link href="favicon.svg" rel="icon" type="image/svg">
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <title>GEMIC - Administrativo</title>
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+</head>
+
 <body>
 
     <!-- Cabeçalho - Início -->
     <div id="area-cabecalho">
         <div id="area-logo">
-           <h1> GE<span class="branco">MIC</span> </h1>
+            <h1> GE<span class="branco">MIC</span> </h1>
         </div>
 
         <div id="area-menu">
             <a href="index.html"> <strong>Dashboard</strong></a>
             <a href="administrativo.html"> <strong>Administrativo</strong></a>
+            <a href="estoque.html"> <strong>Estoque</strong></a>
             <a href="financeiro.html"> <strong>Financeiro</strong></a>
             <a href="suporte.html"> <strong>Suporte</strong></a>
-            <a href="login.html"> <strong>Sair</strong></a>
+            <a href="#" onclick="logout()"> Sair</a>
         </div>
     </div>
-    <!-- Cabeçalho - Fim -->    
+    <!-- Cabeçalho - Fim -->
 
     <!-- Área - Principal -->
     <div id="area-principal">
@@ -32,50 +33,50 @@
                 <h2>Cadastro</h2>
                 <form class="login_form">
                     <input class="login_input" type="text" placeholder="Nome">
-                      <span class="login_input_border"></span>
-                      <input class="login_input" type="email" placeholder="E-mail">
-                      <span class="login_input_border"></span>
-                      <input class="login_input" type="text" placeholder="CPF">
-                      <span class="login_input_border"></span>
-                      <input class="login_input" type="tel" placeholder="Contato">
-                      <span class="login_input_border"></span>
-                      <button class="login_submit">Cadastrar</button>
-                    </form>
+                    <span class="login_input_border"></span>
+                    <input class="login_input" type="email" placeholder="E-mail">
+                    <span class="login_input_border"></span>
+                    <input class="login_input" type="text" placeholder="CPF">
+                    <span class="login_input_border"></span>
+                    <input class="login_input" type="tel" placeholder="Contato">
+                    <span class="login_input_border"></span>
+                    <button class="login_submit">Cadastrar</button>
+                </form>
             </div>
         </div>
 
-    <!-- Área - Lateral -->
-    <div id="area-lateral">
-            
-        <div class="conteudo-lateral">
-            <h3> Receita </h3>
-            <div class="postagem-lateral">
-                <p class="caixa">R$ 0,00</p> <br>
-                <a href="">Leia mais</a>
+        <!-- Área - Lateral -->
+        <div id="area-lateral">
+
+            <div class="conteudo-lateral">
+                <h3> Receita </h3>
+                <div class="postagem-lateral">
+                    <p class="caixa">R$ 0,00</p> <br>
+                    <a href="">Leia mais</a>
+                </div>
+
+                <div class="postagem-lateral" style="border-bottom: none;">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry Ipsum is simply dummy text of the.</p> <br>
+                    <a href="">Leia mais</a>
+                </div>
             </div>
 
-            <div class="postagem-lateral" style="border-bottom: none;">
-                <p>Lorem Ipsum is simply dummy text of the 
-                printing and typesetting industry Ipsum is simply dummy text of the.</p> <br>
-                <a href="">Leia mais</a>
+            <div class="conteudo-lateral">
+                <h3> Categorias </h3>
+                <a href="">Administrativo</a> <br>
+                <a href="">Cadastros</a> <br>
+                <a href="">Suporte</a> <br>
+                <a href="">Ponto Eletrônico</a>
             </div>
         </div>
 
-        <div class="conteudo-lateral">
-            <h3> Categorias </h3>
-            <a href="">Administrativo</a> <br>
-            <a href="">Cadastros</a> <br>
-            <a href="">Suporte</a> <br>
-            <a href="">Ponto Eletrônico</a>
-        </div>
-    </div>
-            
 
-    <!-- Área - Rodapé -->
+        <!-- Área - Rodapé -->
         <div id="rodape">
             Todos os direitos reservados.
         </div>
     </div>
-    
+
 </body>
+
 </html>
