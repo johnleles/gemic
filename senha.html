@@ -7,32 +7,59 @@
     <title>Alterar senha</title>
     <!-- linkando css-->
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <!--sweetalert para customizar o alert-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!--linkando javascript para validação se senha-->
     <script type="text/javascript">
     //criando variaveis dos campos senhas e repetir senha 
         function validar(){
             var senha = formuser.senha.value;
             var rep_senha = formuser.rep_senha.value;
+
+            // "swal" substitui o "alert"
             
             //caso a senha tenha menos de 6 caracteres 
             if(senha == "" || senha.length <= 5){
-                alert('Preencha o campo senha com minimo 6 caracteres');
+                swal({
+                    title: 'OPS!',
+                    text: 'Sua senha precisa ter no minimo 6 caracteres!',
+                    icon: 'error'
+                });
                 formuser.senha.focus();
                 return false;
             }
             
             //caso o repetir senha tenha menos de 6 caracteres
             if(rep_senha == "" || rep_senha.length <= 5){
-                alert('Sua senha precisa ter no minimo 6 caracteres!');
+                swal({
+                    title: 'OPS!',
+                    text: 'Sua senha precisa ter no minimo 6 caracteres!',
+                    icon: 'error'
+                });
                 formuser.rep_senha.focus();
                 return false;
             }
             // caso as duas senhas tenham mais de 6 caracteres e sejam diferentes
             if (senha != rep_senha) {
-                alert('Suas senhas são diferentes!');
+                swal({
+                    title: 'OPS!',
+                    text: 'Suas senhas são diferentes!',
+                    icon: 'error'
+                });
                 formuser.senha.focus();
                 return false;
             }
+            //caso as duas senhas sejam iguais
+            if (senha = rep_senha) {
+                swal({
+                    title: 'Feito!',
+                    text: 'Suas senha foi alterada com sucesso!',
+                    icon: 'success'
+                });
+                formuser.senha.focus();
+                return false;
+            }
+
         }
     </script>
 </head>
