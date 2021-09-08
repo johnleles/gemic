@@ -4,22 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alterar seenha</title>
+    <title>Alterar senha</title>
+    <!-- linkando css-->
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <!--linkando javascript para validação se senha-->
+    <script type="text/javascript">
+    //criando variaveis dos campos senhas e repetir senha 
+        function validar(){
+            var senha = formuser.senha.value;
+            var rep_senha = formuser.rep_senha.value;
+            
+            //caso a senha tenha menos de 6 caracteres 
+            if(senha == "" || senha.length <= 5){
+                alert('Preencha o campo senha com minimo 6 caracteres');
+                formuser.senha.focus();
+                return false;
+            }
+            
+            //caso o repetir senha tenha menos de 6 caracteres
+            if(rep_senha == "" || rep_senha.length <= 5){
+                alert('Sua senha precisa ter no minimo 6 caracteres!');
+                formuser.rep_senha.focus();
+                return false;
+            }
+            // caso as duas senhas tenham mais de 6 caracteres e sejam diferentes
+            if (senha != rep_senha) {
+                alert('Suas senhas são diferentes!');
+                formuser.senha.focus();
+                return false;
+            }
+        }
+    </script>
 </head>
 <body>
+    <!-- classe senha-->
     <main class="senha">
+        <!--container da senha-->
         <div class="senha_container">
             <h1 class="senha_titulo"> GEMIC</h1>
-            <form class="senha_form">
-                <input class="senha_input" type="password" placeholder="Digite sua nova Senha">
+            <!--form-->
+            <form name="formuser" class="senha_form" action="#" method="POST">
+                <!--inputs senha e repetir senha + span da linha-->
+                <input class="senha_input" type="password" name="senha" placeholder="Digite sua nova senha">
                 <span class="senha_input_border"></span>
-                <input class="senha_input" type="password" placeholder="Confirme sua senha">
+                <input class="senha_input" type="password" name="rep_senha" placeholder="Confirme sua senha">
                 <span class="senha_input_border"></span>
+                <!-- enviar a senha-->
+                <input type="submit" onclick="return validar()" class="senha_submit">
             </form>
-            <button class="senha_submit">Alterar</button>
-            
-            
         </div>
     </main>
 </body>
