@@ -31,7 +31,7 @@ body {
 
 #area-menu {
     padding: 10px;
-    text-align: center;
+    text-align: right;
 }
 
 /*
@@ -265,35 +265,35 @@ background: linear-gradient(120deg, #54B9BB, #1AABAD, #75F8FA);
 /*background-color: white; rgb(213,97,100);*/
 border-radius: 10px; 
 color:white;
-padding:10px;
-width:400px;
+padding:60px;
+width:500px;
 margin:auto;
-margin-top: 10px;
+margin-top: 30px;
 }
 
 caption {
     color:rgb(213,97,100); 
     font-weight: bold; 
-    font-size: 25px;
+    font-size: 35px;
 }
 
 caption{
-    color: #1AABAD;
+    color: #929292;
 }
 
 .alinharRotulos {
-    text-align: right;
+    text-align: center;
 }
 .alinhaBtns {
     width:30%;
     /*background: linear-gradient(120deg, #54B9BB, #1AABAD, #75F8FA);*/ 
-    background-color: #1AABAD;
-    color:white;
-    border:0px;
+    background-color: white;
+    color:#1AABAD;
+    border:20px;
     padding:5px;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 3px;
+    margin-top: 20px;
     font-weight: 700;
 }
 
@@ -305,8 +305,8 @@ caption{
 .armazenamento p{
     display: inline;
     position: absolute;
-    margin-top: 50px;
-    padding: 5px; 
+    margin-top: 200px;
+    padding: 10px; 
     background: linear-gradient(120deg, #54B9BB, #1AABAD, #75F8FA); 
     border-radius: 5px;
     font-weight: 700;
@@ -424,3 +424,5 @@ caption{
     color: #929292;
     text-decoration: none;
     }
+
+   
