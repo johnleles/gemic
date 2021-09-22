@@ -16,7 +16,7 @@
         </div>
 
         <div id="area-menu">
-            <a href="index.php"> <strong>Dashboard</strong></a>
+            <a href="dashboard.php"> <strong>Dashboard</strong></a>
             <a href="administrativo.php"> <strong>Administrativo</strong></a>
             <a href="visualizarEstoque.php"> <strong>Estoque</strong></a>
             <a href="financeiro.php"> <strong>Financeiro</strong></a>

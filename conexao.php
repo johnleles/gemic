@@ -1,13 +1,11 @@
 <?php
 
-$hostname = "localhost";
-$user = "root";
-$password = "";
-$database = "gemicdb";
-$conexao = mysqli_connect($hostname,$user,$password,$database);
+define('HOST', 'localhost');
+define('USUARIO', 'root');
+define('SENHA', '');
+define('BD', 'gemicdb');
 
-if(!$conexao){
-    print "Falha na conexão com o Banco de Dados";
-}
+
+$conexao = mysqli_connect(HOST, USUARIO, SENHA, BD) or die ('Não foi possível conectar ao Banco de Dados!');
 
 ?>
