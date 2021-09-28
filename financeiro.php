@@ -31,6 +31,13 @@
     </div>
     <!-- Cabeçalho - Fim -->
 
+    <?php
+    
+    session_start();
+    include('verificar_login.php');
+
+    ?>
+
     <!-- Área - Principal -->
 
     <div id="area-principal">

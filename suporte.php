@@ -25,6 +25,13 @@
         </div>
     </div>
     <!-- Cabeçalho - Fim -->
+    
+    <?php
+    
+    session_start();
+    include('verificar_login.php');
+
+    ?>
 
     <img width="100%" src="imagens/suporte.png">
 
