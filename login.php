@@ -28,7 +28,7 @@ if($row > 0){
     }
 
     if($_SESSION['cargo_usuario'] == 'Tesoureiro') {
-        header('Location: dashboard_tesoureiro.php');
+        header('Location: dashboard_tesouraria.php');
         exit();
     }
 
