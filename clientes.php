@@ -45,19 +45,19 @@ include('conexao.php');
         </div>
 
         <div id="area-menu">
-            <a href="dashboard.php"> <strong>Dashboard</strong></a>
-            <a href="administrativo.php"> <strong>Administrativo</strong></a>
+            <a href="dashboard_auxiliar.php"> <strong>Dashboard</strong></a>
+            <a href="clientes_auxiliar.php"> <strong>Clientes</strong></a>
             <a href="servicos.php"> <strong>Serviços</strong></a>
-            <a href="Estoque.php"> <strong>Estoque</strong></a>
-            <a href="financeiro.php"> <strong>Financeiro</strong></a>
-            <a href="suporte.php"> <strong>Suporte</strong></a>
+            <a href="estoque.php"> <strong>Estoque</strong></a>
+            <a href="rel_orcamentos.php"> <strong>Relatório</strong></a>
+            <a href=""> <strong>Suporte</strong></a>
             <a href="logout.php"> <strong>Sair</strong></a>
         </div>
     </div>
     <!-- Cabeçalho - Fim -->
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="painel_funcionario.php"><big><big><i class="fa fa-arrow-left"></i></big></big></a>
+  <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="dashboard_auxiliar.php"><big><big><i class="fa fa-arrow-left"></i></big></big></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -66,8 +66,7 @@ include('conexao.php');
         <ul class="navbar-nav mr-auto">
         <a href="usuarios.php"> <strong>Usuários</strong></a> ||
         <a href="funcionarios.php"> <strong>Funcionários</strong></a> ||
-        <a href="clientes.php"> <strong>Clientes</strong></a> ||
-        <a href="cargos.php"> <strong>Cargos</strong></a>
+        <a href="clientes.php"> <strong>Clientes</strong></a>
         </ul>
     </div>
 
@@ -85,7 +84,7 @@ include('conexao.php');
       <button name="buttonPesquisar" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
     </form>
   </div>
-</nav>
+</nav> -->
 
 
 

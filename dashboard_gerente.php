@@ -30,43 +30,32 @@ include('conexao.php');
         <div id="area-menu">
             <a href="dashboard_admin.php"> <strong>Dashboard</strong></a>
             <a href="administrativo.php"> <strong>Administrativo</strong></a>
-            <a href="servicos_admin.php"> <strong>Serviços</strong></a>
-            <a href="estoque_admin.php"> <strong>Estoque</strong></a>
+            <a href="servicos.php"> <strong>Serviços</strong></a>
+            <a href="Estoque.php"> <strong>Estoque</strong></a>
             <a href="financeiro.php"> <strong>Financeiro</strong></a>
-            <a href=""> <strong>Suporte</strong></a>
+            <a href="suporte.php"> <strong>Suporte</strong></a>
             <a href="logout.php"> <strong>Sair</strong></a>
         </div>
     </div>
     <!-- Cabeçalho - Fim -->
 
-    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
       <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
         <ul class="navbar-nav mr-auto">
 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
         <a href="#" data-toggle="modal" data-target="#modalExemplo">
             <i class="nc-icon nc-diamond"></i>
             <p>Relatório Orçamentos</p>
-        </a>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </a> ||
         <a href="#" data-toggle="modal" data-target="#modalOS">
             <i class="nc-icon nc-pin-3"></i>
             <p>Relatório de OS</p>
-        </a>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </a> ||
         <a href="#" data-toggle="modal" data-target="#modalRelMov">
             <i class="nc-icon nc-bell-55"></i>
             <p>Relatório de Movimentações</p>
-        </a>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </a> ||
         <a href="#" data-toggle="modal" data-target="#modalRelGastos">
             <i class="nc-icon nc-caps-small"></i>
             <p>Relatório de Gastos</p>
@@ -75,7 +64,7 @@ include('conexao.php');
         </ul>
 
       </div>
-    </nav> -->
+    </nav>
 
     <br> <br>
 
@@ -101,8 +90,8 @@ include('conexao.php');
                   
                   ?>
 
-                      <h1> <p class="card-title"><?php echo @$numero ?> 
-                        <p> </h1>
+                      <p class="card-title"><?php echo @$numero ?>
+                        <p>
                     </div>
                   </div>
                 </div>
@@ -133,8 +122,8 @@ include('conexao.php');
                   $numero = mysqli_num_rows($result);
                   
                   ?>
-                      <h1> <p class="card-title"><?php echo $numero ?>
-                        <p> </h1> 
+                      <p class="card-title"><?php echo $numero ?>
+                        <p>
                     </div>
                   </div>
                 </div>
@@ -167,8 +156,8 @@ include('conexao.php');
                   
                   ?>
 
-                      <h1><p class="card-title"><?php echo $numero ?>
-                        <p> </h1>
+                      <p class="card-title"><?php echo $numero ?>
+                        <p>
                     </div>
                   </div>
                 </div>
@@ -210,7 +199,7 @@ include('conexao.php');
                            while($res_saidas = mysqli_fetch_array($result_saidas)){
 
                             ?>
-                              <h1> <p class="card-title"><small>
+                              <p class="card-title"><small>
 
                                 <?php
                                $total = $res_entradas['total_entradas'] - $res_saidas['total_saidas']; 
@@ -222,7 +211,7 @@ include('conexao.php');
                               } 
 
                               
-                              ?></small> <h1>
+                              ?></small>
 
                                <?php
                             } }

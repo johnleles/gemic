@@ -1,13 +1,13 @@
 <?php
 session_start();
-include('verificar_login.php');
 include('conexao.php');
+
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GEMIC - Fechar Orçamentos</title>
+    <title>GEMIC - Listar Orçamentos</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -28,11 +28,11 @@ include('conexao.php');
         </div>
 
         <div id="area-menu">
-            <a href="dashboard_auxiliar.php"> <strong>Dashboard</strong></a>
-            <a href="clientes_auxiliar.php"> <strong>Clientes</strong></a>
-            <a href="fechar_orcamentos.php"> <strong>Serviços</strong></a>
-            <a href="estoque.php"> <strong>Estoque</strong></a>
-            <a href="rel_orcamentos.php"> <strong>Relatório</strong></a>
+            <a href="dashboard_admin.php"> <strong>Dashboard</strong></a>
+            <a href="administrativo.php"> <strong>Administrativo</strong></a>
+            <a href="servicos_admin.php"> <strong>Serviços</strong></a>
+            <a href="estoque_admin.php"> <strong>Estoque</strong></a>
+            <a href="financeiro.php"> <strong>Financeiro</strong></a>
             <a href=""> <strong>Suporte</strong></a>
             <a href="logout.php"> <strong>Sair</strong></a>
         </div>
@@ -40,27 +40,37 @@ include('conexao.php');
     <!-- Cabeçalho - Fim -->
 
 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="servicos_admin.php"><big><big><i class="fa fa-arrow-left"></i></big></big></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="listar_orcamentos.php"><big><big><i class="fa fa-arrow-left"></i></big></big></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+      <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+        <ul class="navbar-nav mr-auto">
 
-  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-    <ul class="navbar-nav mr-auto">
-
+        <a href="abrir_orcamentos_admin.php"> <strong>Abrir Orçamento</strong></a> &nbsp;|&nbsp;
+        <a href="fechar_orcamentos_admin.php"> <strong>Fechar Orçamento</strong></a>
       
-    </ul>
-   
-  </div>
-  </nav>
+        </ul>
+        <form class="form-inline my-2 my-lg-0 mr-5">
+          <input name="txtpesquisarcpf" id="txtcpf" class="form-control mr-sm-2" type="search" placeholder="Buscar pelo CPF" aria-label="Pesquisar">
+          <button name="buttonPesquisarCPF" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+        </form>
+
+        <form class="form-inline my-2 my-lg-0">
+          <input name="txtpesquisar" class="form-control mr-sm-2" type="search" placeholder="Buscar pelo Nome" aria-label="Pesquisar">
+          <button name="buttonPesquisar" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+    </nav>
 
 
 
 
 
-<div class="container">
+
+    <div class="container">
 
 
     
@@ -314,7 +324,3 @@ if($result_editar == ''){
       $('#txtcpf').mask('000.000.000-00');
       });
 </script>
-
-
-
-   

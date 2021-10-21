@@ -45,7 +45,7 @@ include('conexao.php');
 
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="dashboard_auxiliar.php"><big><big><i class="fa fa-arrow-left"></i></big></big></a>
+    <a class="navbar-brand" href="servicos.php"><big><big><i class="fa fa-arrow-left"></i></big></big></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -53,9 +53,9 @@ include('conexao.php');
       <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
         <ul class="navbar-nav mr-auto">
 
-        <a href="listar_orcamentos.php"> <strong>Orçamentos</strong></a> &nbsp;|&nbsp;
-        <a href="listar_os.php"> <strong>Ordem de Serviço</strong></a>
-
+        <a href="abrir_orcamentos.php"> <strong>Abrir O.S.</strong></a> &nbsp;|&nbsp;
+        <a href="consultar_os.php"> <strong>Consultar O.S</strong></a>
+      
         </ul>
         <form class="form-inline my-2 my-lg-0 mr-5">
           <input name="txtpesquisarcpf" id="txtcpf" class="form-control mr-sm-2" type="search" placeholder="Buscar pelo CPF" aria-label="Pesquisar">

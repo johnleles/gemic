@@ -1,13 +1,12 @@
 <?php
-session_start();
-include('verificar_login.php');
 include('conexao.php');
+session_start();
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>GEMIC - Gastos</title>
+    <title>GEMIC - Despesas</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -23,6 +22,12 @@ include('conexao.php');
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
 
+
+
+
+
+
+
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
 </head>
 
@@ -36,34 +41,55 @@ include('conexao.php');
         </div>
 
         <div id="area-menu">
-            <a href="dashboard.php"> <strong>Dashboard</strong></a>
-            <a href="movimentacoes.php"> <strong>Movimentações</strong></a>
-            <a href="gastos.php"> <strong>Despesas</strong></a>
-            <a href="vendas.php"> <strong>Vendas</strong></a>
-            <a href="compras.php"> <strong>Compras</strong></a>
-            <a href="pagamentos.php"> <strong>Pagamentos</strong></a>
-            <a href="suporte.php"> <strong>Suporte</strong></a>
+            <a href="dashboard_admin.php"> <strong>Dashboard</strong></a>
+            <a href="administrativo.php"> <strong>Administrativo</strong></a>
+            <a href="servicos_admin.php"> <strong>Serviços</strong></a>
+            <a href="estoque_admin.php"> <strong>Estoque</strong></a>
+            <a href="financeiro.php"> <strong>Financeiro</strong></a>
+            <a href=""> <strong>Suporte</strong></a>
             <a href="logout.php"> <strong>Sair</strong></a>
         </div>
     </div>
     <!-- Cabeçalho - Fim -->
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="painel_tesouraria.php"><big><big><i class="fa fa-arrow-left"></i></big></big></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-    <ul class="navbar-nav mr-auto">
-      
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input name="txtpesquisar" class="form-control mr-sm-2" type="date" placeholder="Pesquisar" aria-label="Pesquisar">
-      <button name="buttonPesquisar" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
-    </form>
-  </div>
-</nav>
+<div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+<ul class="navbar-nav mr-auto">
+
+<a href="movimentacoes_admin.php"> <strong>Movimentações</strong></a> ||
+<a href="receitas_admin.php"> <strong>Receitas</strong></a> ||
+<a href="despesas_admin.php"> <strong>Despesas</strong></a> ||
+<a href="pagamentos_admin.php"> <strong>Pagamentos</strong></a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;
+
+<a href="#" data-toggle="modal" data-target="#modalExemplo">
+          <i class="nc-icon nc-diamond"></i>
+          <p>Relatório Orçamentos</p>
+      </a>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#" data-toggle="modal" data-target="#modalOS">
+          <i class="nc-icon nc-pin-3"></i>
+          <p>Relatório de OS</p>
+      </a> 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#" data-toggle="modal" data-target="#modalRelMov">
+          <i class="nc-icon nc-bell-55"></i>
+          <p>Relatório de Movimentações</p>
+      </a>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#" data-toggle="modal" data-target="#modalRelGastos">
+          <i class="nc-icon nc-caps-small"></i>
+          <p>Relatório de Gastos</p>
+      </a>
+        
+      </ul>
+
+    </div>
+  </nav>
 
 
 
@@ -79,7 +105,7 @@ include('conexao.php');
 
          <div class="row">
            <div class="col-sm-12">
-            <button type="button" class="btn btn-success mb-3" data-toggle="modal" data-target="#modalExemplo">Inserir Compra </button>
+            <button type="button" class="btn btn-success mb-3" data-toggle="modal" data-target="#modalExemplo">Inserir Novo </button>
 
            </div>
 
@@ -92,7 +118,7 @@ include('conexao.php');
               <div class="col-md-12">
                 <div class="card">
                   <div class="card-header">
-                    <h4 class="card-title"> Tabela de Compras</h4>
+                    <h4 class="card-title"> Tabela de Gastos</h4>
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
@@ -104,9 +130,9 @@ include('conexao.php');
 
                         if(isset($_GET['buttonPesquisar']) and $_GET['txtpesquisar'] != ''){
                           $data = $_GET['txtpesquisar'];
-                           $query = "select * from compras where data = '$data'  order by id asc"; 
+                           $query = "select * from gastos where data = '$data'  order by id asc"; 
                         }else{
-                         $query = "select * from compras where data = curDate()  order by id asc"; 
+                         $query = "select * from gastos where data = curDate()  order by id asc"; 
                         }
 
                         
@@ -132,7 +158,7 @@ include('conexao.php');
                             Valor
                           </th>
                           <th>
-                            Peça
+                            Motivo
                           </th>
                           <th>
                             Funcionário
@@ -140,7 +166,6 @@ include('conexao.php');
                            <th>
                             Data
                           </th>
-                           
                            
                             <th>
                             Ações
@@ -152,29 +177,29 @@ include('conexao.php');
 
                           while($res_1 = mysqli_fetch_array($result)){
                             $valor = $res_1["valor"];
-                            $peca = $res_1["peca"];
+                            $motivo = $res_1["motivo"];
                             $funcionario = $res_1["funcionario"];
                             $data = $res_1["data"];
-                           
                            
                             $id = $res_1["id"];
 
                             $data2 = implode('/', array_reverse(explode('-', $data)));
 
+                            $valor = number_format($valor, 2, ',', '.');
+
                             ?>
 
                             <tr>
 
-                             <td><?php echo $valor; ?></td>
-                             <td><?php echo $peca; ?></td> 
+                             <td>R$ <?php echo $valor; ?></td>
+                             <td><?php echo $motivo; ?></td> 
                              <td><?php echo $funcionario; ?></td>
                              <td><?php echo $data2; ?></td>
-                             
                            
                              <td>
-                            
+                             <a class="btn btn-info" href="despesas.php?func=edita&id=<?php echo $id; ?>"><i class="fa fa-pencil-square-o"></i></a>
 
-                             <a class="btn btn-danger" href="compras.php?func=deleta&id=<?php echo $id; ?>"><i class="fa fa-minus-square"></i></a>
+                             <a class="btn btn-danger" href="despesas.php?func=deleta&id=<?php echo $id; ?>"><i class="fa fa-minus-square"></i></a>
 
                              </td>
                             </tr>
@@ -206,7 +231,7 @@ include('conexao.php');
           <div class="modal-content">
             <div class="modal-header">
               
-              <h4 class="modal-title">Compras</h4>
+              <h4 class="modal-title">Gastos</h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
@@ -215,11 +240,11 @@ include('conexao.php');
                 <label for="id_produto">Valor</label>
                 <input type="text" class="form-control mr-2" name="txtvalor" placeholder="Valor" required>
               </div>
-              
-             <div class="form-group">
-                <label for="id_produto">Peça</label>
-                <input type="text" class="form-control mr-2" name="txtpeca" placeholder="Peça" required>
+               <div class="form-group">
+                <label for="fornecedor">Motivo</label>
+                 <input type="text" class="form-control mr-2" name="txtmotivo"  placeholder="Motivo" required>
               </div>
+             
               
              
             </div>
@@ -233,31 +258,33 @@ include('conexao.php');
             </div>
           </div>
         </div>
-      </div>   
+      </div>  
 
 
 
-         <?php
-       if(isset($_GET['buttonPesquisar']) and $_GET['txtpesquisar'] != ''){
+       <?php
+
+
+                        if(isset($_GET['buttonPesquisar']) and $_GET['txtpesquisar'] != ''){
                           $data = $_GET['txtpesquisar'];
-                           $query = "select sum(valor) as total from compras where data = '$data'  order by id asc"; 
+                           $query = "select SUM(valor) as total from gastos where data = '$data'  order by id asc"; 
                         }else{
-                         $query = "select sum(valor) as total from compras where data = curDate()  order by id asc"; 
+                         $query = "select SUM(valor) as total from gastos where data = curDate()  order by id asc"; 
                         }
 
                         
 
                         $result = mysqli_query($conexao, $query);
                         //$dado = mysqli_fetch_array($result);
-                        $row = mysqli_num_rows($result); 
+                        $row = mysqli_num_rows($result);
 
                          while($res_1 = mysqli_fetch_array($result)){
-                            $total = $res_1["total"];
+                          $total = $res_1['total'];
 
-                        ?>
+?>
 
 
-         <div class="row mt-3">
+      <div class="row mt-3">
         <div class="col-md-12">
          <p align="right">Total: R$ 
           <?php
@@ -266,21 +293,19 @@ include('conexao.php');
           }else{
             echo $total;
           }
-
-        }
           
            ?>
             
           </p>
         </div>
-      </div>   
- 
+      </div>  
+
+<?php } ?>
 
     <!-- Área - Rodapé -->
     <div id="rodape">
         Todos os direitos reservados.
     </div>
-
 
 </body>
 </html>
@@ -293,33 +318,33 @@ include('conexao.php');
 <?php
 if(isset($_POST['button'])){
   $valor = $_POST['txtvalor'];
-  $peca = $_POST['txtpeca'];
+  $valor = str_replace(',', '.', $valor);
+  $motivo = $_POST['txtmotivo'];
   $funcionario = $_SESSION['nome_usuario'];
 
 
-$query = "INSERT into compras (valor, peca, funcionario, data) VALUES ('$valor',  '$peca', '$funcionario', curDate() )";
+$query = "INSERT into gastos (valor, motivo, funcionario, data) VALUES ('$valor', '$motivo', '$funcionario',  curDate() )";
 
 $result = mysqli_query($conexao, $query);
 
 
 //RECUPERAR O ULTIMO ID LANÇADO
-$query_id = "select * from compras order by id desc limit 1";
+$query_id = "select * from gastos order by id desc limit 1";
 $result_id = mysqli_query($conexao, $query_id);
 while($res_id = mysqli_fetch_array($result_id)){
-  $id_ultimo = $res_id['id'];
+  $id_gasto = $res_id['id'];
   }
 
 //INSERIR OS DADOS NA TABELA DE MOVIMENTAÇÕES
-$query_mov = "INSERT into movimentacoes (tipo, movimento, valor, funcionario, data, id_movimento) VALUES ('Saída', 'Compra', '$valor', '$funcionario',  curDate(), '$id_ultimo' )";
+$query_mov = "INSERT into movimentacoes (tipo, movimento, valor, funcionario, data, id_movimento) VALUES ('Saída', 'Gasto', '$valor', '$funcionario',  curDate(), '$id_gasto' )";
 mysqli_query($conexao, $query_mov);
-
 
 
 if($result == ''){
   echo "<script language='javascript'> window.alert('Ocorreu um erro ao Cadastrar!'); </script>";
 }else{
     echo "<script language='javascript'> window.alert('Salvo com Sucesso!'); </script>";
-    echo "<script language='javascript'> window.location='compras.php'; </script>";
+    echo "<script language='javascript'> window.location='despesas.php'; </script>";
 }
 
 }
@@ -330,20 +355,93 @@ if($result == ''){
 <?php
 if(@$_GET['func'] == 'deleta'){
   $id = $_GET['id'];
- 
-  $funcionario = $_SESSION['nome_usuario'];
-  $query = "DELETE FROM compras where id = '$id'";
+  $query = "DELETE FROM gastos where id = '$id'";
   mysqli_query($conexao, $query);
 
-  $query = "DELETE FROM movimentacoes where movimento = 'Compra' and id_movimento = '$id'";
+  $query = "DELETE FROM movimentacoes where movimento = 'Gasto' and id_movimento = '$id'";
   mysqli_query($conexao, $query);
 
-
-
-  echo "<script language='javascript'> window.location='compras.php'; </script>";
+  echo "<script language='javascript'> window.location='despesas.php'; </script>";
 }
 ?>
 
+
+
+<!--EDITAR -->
+<?php
+if(@$_GET['func'] == 'edita'){  
+$id = $_GET['id'];
+$query = "select * from gastos where id = '$id'";
+$result = mysqli_query($conexao, $query);
+
+ while($res_1 = mysqli_fetch_array($result)){
+
+
+?>
+
+  <!-- Modal -->
+      <div id="modalEditar" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+         <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              
+              <h4 class="modal-title">Gastos</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <form method="POST" action="">
+              <div class="form-group">
+                <label for="id_produto">Motivo</label>
+                <input type="text" class="form-control mr-2" name="txtmotivo" placeholder="Nome" value="<?php echo $res_1['motivo']; ?>" required>
+              </div>
+
+             
+              
+            </div>
+                   
+            <div class="modal-footer">
+               <button type="submit" class="btn btn-success mb-3" name="buttonEditar">Salvar </button>
+
+
+                <button type="button" class="btn btn-danger mb-3" data-dismiss="modal">Cancelar </button>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>    
+
+ 
+
+ <script> $("#modalEditar").modal("show"); </script> 
+
+<!--Comando para editar os dados UPDATE -->
+<?php
+if(isset($_POST['buttonEditar'])){
+  $motivo = $_POST['txtmotivo'];
+ 
+
+
+  
+ 
+
+
+$query_editar = "UPDATE gastos set motivo = '$motivo' where id = '$id' ";
+
+$result_editar = mysqli_query($conexao, $query_editar);
+
+if($result_editar == ''){
+  echo "<script language='javascript'> window.alert('Ocorreu um erro ao Editar!'); </script>";
+}else{
+    echo "<script language='javascript'> window.alert('Editado com Sucesso!'); </script>";
+    echo "<script language='javascript'> window.location='despesas.php'; </script>";
+}
+
+}
+?>
+
+
+<?php } }  ?>
 
 
 

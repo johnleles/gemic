@@ -1,37 +1,21 @@
 <?php 
-
 session_start();
 include('verificar_login.php');
-
 include('conexao.php');
-
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
+    <title>GEMIC - Dashboard</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
-
-
-
-
-
-
-
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
 </head>
 
@@ -43,12 +27,11 @@ include('conexao.php');
         </div>
 
         <div id="area-menu">
-            <a href="dashboard.php"> <strong>Dashboard</strong></a>
+            <a href="dashboard_tesouraria.php"> <strong>Dashboard</strong></a>
             <a href="movimentacoes.php"> <strong>Movimentações</strong></a>
-            <a href="gastos.php"> <strong>Gastos</strong></a>
-            <a href="vendas.php"> <strong>Vendas</strong></a>
+            <a href="receitas.php"> <strong>Receitas</strong></a>
+            <a href="despesas.php"> <strong>Despesas</strong></a>
             <a href="pagamentos.php"> <strong>Pagamentos</strong></a>
-            <a href="compras.php"> <strong>Compras</strong></a>
             <a href="suporte.php"> <strong>Suporte</strong></a>
             <a href="logout.php"> <strong>Sair</strong></a>
         </div>
@@ -64,15 +47,15 @@ include('conexao.php');
         <a href="#" data-toggle="modal" data-target="#modalExemplo">
             <i class="nc-icon nc-diamond"></i>
             <p>Relatório Orçamentos</p>
-        </a> ||
+        </a> &nbsp;|&nbsp;
         <a href="#" data-toggle="modal" data-target="#modalOS">
             <i class="nc-icon nc-pin-3"></i>
             <p>Relatório de OS</p>
-        </a> ||
+        </a> &nbsp;|&nbsp;
         <a href="#" data-toggle="modal" data-target="#modalRelMov">
             <i class="nc-icon nc-bell-55"></i>
             <p>Relatório de Movimentações</p>
-        </a> ||
+        </a> &nbsp;|&nbsp;
         <a href="#" data-toggle="modal" data-target="#modalRelGastos">
             <i class="nc-icon nc-caps-small"></i>
             <p>Relatório de Gastos</p>
@@ -109,9 +92,9 @@ include('conexao.php');
                            while($res_serv = mysqli_fetch_array($result_servicos)){
                             $total_serv = number_format($res_serv['total'], 2, ',', '.');
                             ?>
-                              <p class="card-title"><small>R$ <?php echo $total_serv; 
+                              <h1> <p class="card-title"><small>R$ <?php echo $total_serv; 
                               
-                              ?></small>
+                              ?></small> </h1>
 
                                <?php
                             }
@@ -161,9 +144,9 @@ include('conexao.php');
                            while($res_vendas = mysqli_fetch_array($result_vendas)){
                              $total_vendas = number_format($res_vendas['total'], 2, ',', '.');
                             ?>
-                              <p class="card-title"><small>R$ <?php echo $total_vendas; 
+                              <h1> <p class="card-title"><small>R$ <?php echo $total_vendas; 
                               
-                              ?></small>
+                              ?></small> </h1>
 
                                <?php
                             }
@@ -213,9 +196,9 @@ include('conexao.php');
                            while($res_gastos = mysqli_fetch_array($result_gastos)){
                              $total_gastos = number_format($res_gastos['total'], 2, ',', '.');
                             ?>
-                              <p class="card-title"><small>R$ <?php echo $total_gastos; 
+                              <h1> <p class="card-title"><small>R$ <?php echo $total_gastos; 
                               
-                              ?></small>
+                              ?></small> </h1>
 
                                <?php
                             }
@@ -269,7 +252,7 @@ include('conexao.php');
                            while($res_saidas = mysqli_fetch_array($result_saidas)){
 
                             ?>
-                              <p class="card-title"><small>
+                              <h1> <p class="card-title"><small>
 
                                 <?php
                                 $total_mov = 0;
@@ -282,7 +265,7 @@ include('conexao.php');
                               } 
 
                               
-                              ?></small>
+                              ?></small> </h1>
 
                                <?php
                             } }

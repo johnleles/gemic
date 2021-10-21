@@ -45,12 +45,12 @@ include('conexao.php');
         </div>
 
         <div id="area-menu">
-            <a href="dashboard.php"> <strong>Dashboard</strong></a>
+            <a href="dashboard_admin.php"> <strong>Dashboard</strong></a>
             <a href="administrativo.php"> <strong>Administrativo</strong></a>
-            <a href="servicos.php"> <strong>Serviços</strong></a>
-            <a href="Estoque.php"> <strong>Estoque</strong></a>
+            <a href="servicos_admin.php"> <strong>Serviços</strong></a>
+            <a href="estoque_admin.php"> <strong>Estoque</strong></a>
             <a href="financeiro.php"> <strong>Financeiro</strong></a>
-            <a href="suporte.php"> <strong>Suporte</strong></a>
+            <a href=""> <strong>Suporte</strong></a>
             <a href="logout.php"> <strong>Sair</strong></a>
         </div>
     </div>
@@ -58,18 +58,19 @@ include('conexao.php');
 
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="painel_funcionario.php"><big><big><i class="fa fa-arrow-left"></i></big></big></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <a class="navbar-brand" href="administrativo.php"><big><big><i class="fa fa-arrow-left"></i></big></big></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
       <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
         <ul class="navbar-nav mr-auto">
-        <a href="usuarios.php"> <strong>Usuários</strong></a> ||
-        <a href="funcionarios.php"> <strong>Funcionários</strong></a> ||
-        <a href="clientes.php"> <strong>Clientes</strong></a> ||
-        <a href="cargos.php"> <strong>Cargos</strong></a>
+          
         </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input name="txtpesquisar" class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+          <button name="buttonPesquisar" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+        </form>
       </div>
     </nav>
 

@@ -43,48 +43,55 @@ $status = 10;
         </div>
 
         <div id="area-menu">
-            <a href="dashboard_tesouraria.php"> <strong>Dashboard</strong></a>
-            <a href="movimentacoes.php"> <strong>Movimentações</strong></a>
-            <a href="receitas.php"> <strong>Receitas</strong></a>
-            <a href="despesas.php"> <strong>Despesas</strong></a>
-            <a href="pagamentos.php"> <strong>Pagamentos</strong></a>
-            <a href="suporte.php"> <strong>Suporte</strong></a>
+            <a href="dashboard_admin.php"> <strong>Dashboard</strong></a>
+            <a href="administrativo.php"> <strong>Administrativo</strong></a>
+            <a href="servicos_admin.php"> <strong>Serviços</strong></a>
+            <a href="estoque_admin.php"> <strong>Estoque</strong></a>
+            <a href="financeiro.php"> <strong>Financeiro</strong></a>
+            <a href=""> <strong>Suporte</strong></a>
             <a href="logout.php"> <strong>Sair</strong></a>
         </div>
     </div>
     <!-- Cabeçalho - Fim -->
 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
+<div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+<ul class="navbar-nav mr-auto">
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<a href="movimentacoes_admin.php"> <strong>Movimentações</strong></a> ||
+<a href="receitas_admin.php"> <strong>Receitas</strong></a> ||
+<a href="despesas_admin.php"> <strong>Despesas</strong></a> ||
+<a href="pagamentos_admin.php"> <strong>Pagamentos</strong></a>
 
-  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-    <ul class="navbar-nav mr-auto">
-      
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;
 
-      <select class="form-control mr-2" id="category" name="status">
-         <option value="Todos">Todas</option> 
-          <option value="Entrada">Entradas</option> 
-           <option value="Saída">Saídas</option> 
-           
-             
-      </select>
+<a href="#" data-toggle="modal" data-target="#modalExemplo">
+          <i class="nc-icon nc-diamond"></i>
+          <p>Relatório Orçamentos</p>
+      </a>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#" data-toggle="modal" data-target="#modalOS">
+          <i class="nc-icon nc-pin-3"></i>
+          <p>Relatório de OS</p>
+      </a> 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#" data-toggle="modal" data-target="#modalRelMov">
+          <i class="nc-icon nc-bell-55"></i>
+          <p>Relatório de Movimentações</p>
+      </a>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#" data-toggle="modal" data-target="#modalRelGastos">
+          <i class="nc-icon nc-caps-small"></i>
+          <p>Relatório de Gastos</p>
+      </a>
+        
+      </ul>
 
-     <input name="dataInicial" class="form-control mr-sm-2" type="date" placeholder="Pesquisar" aria-label="Pesquisar" value="<?php echo date('Y-m-d'); ?>">
-       <input name="dataFinal" class="form-control mr-sm-2" type="date" placeholder="Pesquisar" aria-label="Pesquisar" value="<?php echo date('Y-m-d'); ?>">
-      <button name="buttonPesquisar" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
-    </form>
-  </div>
-</nav>
-
-
-
-
+    </div>
+  </nav>
 
 <div class="container">
 

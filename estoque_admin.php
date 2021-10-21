@@ -1,36 +1,23 @@
 <?php
-include('conexao.php');
 session_start();
+include('conexao.php');
+
 ?>
 
 <!DOCTYPE html>
 <html>
-<head>
-    <title>GEMIC - Gastos</title>
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
+<head>
+    <title>GEMIC - Estoque</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
-
-
-
-
-
-
-
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
 </head>
-
 
 <body>
 
@@ -41,20 +28,19 @@ session_start();
         </div>
 
         <div id="area-menu">
-            <a href="dashboard.php"> <strong>Dashboard</strong></a>
-            <a href="movimentacoes.php"> <strong>Movimentações</strong></a>
-            <a href="gastos.php"> <strong>Gastos</strong></a>
-            <a href="vendas.php"> <strong>Vendas</strong></a>
-            <a href="pagamentos.php"> <strong>Pagamentos</strong></a>
-            <a href="compras.php"> <strong>Compras</strong></a>
-            <a href="suporte.php"> <strong>Suporte</strong></a>
+            <a href="dashboard_admin.php"> <strong>Dashboard</strong></a>
+            <a href="administrativo.php"> <strong>Administrativo</strong></a>
+            <a href="servicos_admin.php"> <strong>Serviços</strong></a>
+            <a href="estoque_admin.php"> <strong>Estoque</strong></a>
+            <a href="financeiro.php"> <strong>Financeiro</strong></a>
+            <a href=""> <strong>Suporte</strong></a>
             <a href="logout.php"> <strong>Sair</strong></a>
         </div>
     </div>
     <!-- Cabeçalho - Fim -->
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="painel_tesouraria.php"><big><big><i class="fa fa-arrow-left"></i></big></big></a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="dashboard_admin.php"><big><big><i class="fa fa-arrow-left"></i></big></big></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -64,7 +50,7 @@ session_start();
       
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input name="txtpesquisar" class="form-control mr-sm-2" type="date" placeholder="Pesquisar" aria-label="Pesquisar" value="<?php echo date('Y-m-d') ?>">
+      <input name="txtpesquisar" class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
       <button name="buttonPesquisar" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
     </form>
   </div>
@@ -97,7 +83,7 @@ session_start();
               <div class="col-md-12">
                 <div class="card">
                   <div class="card-header">
-                    <h4 class="card-title"> Tabela de Gastos</h4>
+                    <h4 class="card-title"> Estoque</h4>
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
@@ -108,10 +94,10 @@ session_start();
 
 
                         if(isset($_GET['buttonPesquisar']) and $_GET['txtpesquisar'] != ''){
-                          $data = $_GET['txtpesquisar'];
-                           $query = "select * from gastos where data = '$data'  order by id asc"; 
+                          $nome = $_GET['txtpesquisar'] . '%';
+                           $query = "select * from produtos where produto LIKE '$nome'  order by produto asc"; 
                         }else{
-                         $query = "select * from gastos where data = curDate()  order by id asc"; 
+                         $query = "select * from produtos order by id desc"; 
                         }
 
                         
@@ -122,7 +108,7 @@ session_start();
 
                        if($row == '' or $row == 0){
 
-                            echo "<h3> Não existem dados cadastrados no banco </h3>";
+                            echo "<h5> Não existem dados cadastrados no banco </h5>";
 
                         }else{
 
@@ -130,22 +116,18 @@ session_start();
 
                           
 
-                      <table class="table">
+                      <table class="table" id="datatb">
                         <thead class=" text-primary">
                           
+                          <th>
+                            Nome
+                          </th>
                           <th>
                             Valor
                           </th>
                           <th>
-                            Motivo
+                            Quantidade
                           </th>
-                          <th>
-                            Funcionário
-                          </th>
-                           <th>
-                            Data
-                          </th>
-                           
                             <th>
                             Ações
                           </th>
@@ -155,30 +137,26 @@ session_start();
                          <?php 
 
                           while($res_1 = mysqli_fetch_array($result)){
+                            $nome = $res_1["produto"];
                             $valor = $res_1["valor"];
-                            $motivo = $res_1["motivo"];
-                            $funcionario = $res_1["funcionario"];
-                            $data = $res_1["data"];
+                            $quantidade = $res_1["quantidade"];
                            
                             $id = $res_1["id"];
 
-                            $data2 = implode('/', array_reverse(explode('-', $data)));
-
-                            $valor = number_format($valor, 2, ',', '.');
+                           
 
                             ?>
 
                             <tr>
 
-                             <td>R$ <?php echo $valor; ?></td>
-                             <td><?php echo $motivo; ?></td> 
-                             <td><?php echo $funcionario; ?></td>
-                             <td><?php echo $data2; ?></td>
-                           
+                             <td><?php echo $nome; ?></td> 
+                             <td><?php echo $valor; ?></td>
+                             <td><?php echo $quantidade; ?></td>
+                            
                              <td>
-                             <a class="btn btn-info" href="gastos.php?func=edita&id=<?php echo $id; ?>"><i class="fa fa-pencil-square-o"></i></a>
+                             <a class="text-info" href="estoque.php?func=edita&id=<?php echo $id; ?>"><i class="fa fa-pencil-square-o"></i></a>
 
-                             <a class="btn btn-danger" href="gastos.php?func=deleta&id=<?php echo $id; ?>"><i class="fa fa-minus-square"></i></a>
+                             <a class="text-danger" href="estoque.php?func=deleta&id=<?php echo $id; ?>"><i class="fa fa-minus-square"></i></a>
 
                              </td>
                             </tr>
@@ -210,21 +188,23 @@ session_start();
           <div class="modal-content">
             <div class="modal-header">
               
-              <h4 class="modal-title">Gastos</h4>
+              <h4 class="modal-title">Produtos</h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
               <form method="POST" action="">
               <div class="form-group">
+                <label for="id_produto">Nome</label>
+                <input type="text" class="form-control mr-2" name="txtnome" placeholder="Nome Produto" required>
+              </div>
+              <div class="form-group">
                 <label for="id_produto">Valor</label>
                 <input type="text" class="form-control mr-2" name="txtvalor" placeholder="Valor" required>
               </div>
-               <div class="form-group">
-                <label for="fornecedor">Motivo</label>
-                 <input type="text" class="form-control mr-2" name="txtmotivo"  placeholder="Motivo" required>
+              <div class="form-group">
+                <label for="id_produto">Quantidade</label>
+                <input type="number" class="form-control mr-2" name="txtquantidade" placeholder="Quantidade" required>
               </div>
-             
-              
              
             </div>
                    
@@ -237,93 +217,49 @@ session_start();
             </div>
           </div>
         </div>
-      </div>  
+      </div>
 
-
-
-       <?php
-
-
-                        if(isset($_GET['buttonPesquisar']) and $_GET['txtpesquisar'] != ''){
-                          $data = $_GET['txtpesquisar'];
-                           $query = "select SUM(valor) as total from gastos where data = '$data'  order by id asc"; 
-                        }else{
-                         $query = "select SUM(valor) as total from gastos where data = curDate()  order by id asc"; 
-                        }
-
-                        
-
-                        $result = mysqli_query($conexao, $query);
-                        //$dado = mysqli_fetch_array($result);
-                        $row = mysqli_num_rows($result);
-
-                         while($res_1 = mysqli_fetch_array($result)){
-                          $total = $res_1['total'];
-
-?>
-
-
-      <div class="row mt-3">
-        <div class="col-md-12">
-         <p align="right">Total: R$ 
-          <?php
-          if($total == '') {
-            echo 0;
-          }else{
-            echo $total;
-          }
-          
-           ?>
-            
-          </p>
+        <!-- Área - Rodapé -->
+        <div id="rodape">
+            Todos os direitos reservados.
         </div>
-      </div>  
-
-<?php } ?>
-
-    <!-- Área - Rodapé -->
-    <div id="rodape">
-        Todos os direitos reservados.
     </div>
 
 </body>
+
 </html>
-
-
-
 
 <!--CADASTRAR -->
 
 <?php
 if(isset($_POST['button'])){
+  $nome = $_POST['txtnome'];
   $valor = $_POST['txtvalor'];
-  $valor = str_replace(',', '.', $valor);
-  $motivo = $_POST['txtmotivo'];
-  $funcionario = $_SESSION['nome_usuario'];
+  $quantidade = $_POST['txtquantidade'];
+   $valor = str_replace(',', '.', $valor);
+ 
 
+  //VERIFICAR SE O CARGO JÁ ESTÁ CADASTRADO
+  $query_verificar = "select * from produtos where produto = '$nome' ";
 
-$query = "INSERT into gastos (valor, motivo, funcionario, data) VALUES ('$valor', '$motivo', '$funcionario',  curDate() )";
+  $result_verificar = mysqli_query($conexao, $query_verificar);
+  $row_verificar = mysqli_num_rows($result_verificar);
 
-$result = mysqli_query($conexao, $query);
-
-
-//RECUPERAR O ULTIMO ID LANÇADO
-$query_id = "select * from gastos order by id desc limit 1";
-$result_id = mysqli_query($conexao, $query_id);
-while($res_id = mysqli_fetch_array($result_id)){
-  $id_gasto = $res_id['id'];
+  if($row_verificar > 0){
+  echo "<script language='javascript'> window.alert('Produto já Cadastrado!'); </script>";
+  exit();
   }
 
-//INSERIR OS DADOS NA TABELA DE MOVIMENTAÇÕES
-$query_mov = "INSERT into movimentacoes (tipo, movimento, valor, funcionario, data, id_movimento) VALUES ('Saída', 'Gasto', '$valor', '$funcionario',  curDate(), '$id_gasto' )";
-mysqli_query($conexao, $query_mov);
 
+$query = "INSERT into produtos (produto, valor) VALUES ('$nome', '$valor')";
+
+$result = mysqli_query($conexao, $query);
 
 if($result == ''){
   echo "<script language='javascript'> window.alert('Ocorreu um erro ao Cadastrar!'); </script>";
 }else{
     echo "<script language='javascript'> window.alert('Salvo com Sucesso!'); </script>";
-    echo "<script language='javascript'> window.location='gastos.php'; </script>";
+    echo "<script language='javascript'> window.location='estoque.php'; </script>";
 }
 
 }
@@ -334,13 +270,9 @@ if($result == ''){
 <?php
 if(@$_GET['func'] == 'deleta'){
   $id = $_GET['id'];
-  $query = "DELETE FROM gastos where id = '$id'";
+  $query = "DELETE FROM produtos where id = '$id'";
   mysqli_query($conexao, $query);
-
-  $query = "DELETE FROM movimentacoes where movimento = 'Gasto' and id_movimento = '$id'";
-  mysqli_query($conexao, $query);
-
-  echo "<script language='javascript'> window.location='gastos.php'; </script>";
+  echo "<script language='javascript'> window.location='estoque.php'; </script>";
 }
 ?>
 
@@ -350,7 +282,7 @@ if(@$_GET['func'] == 'deleta'){
 <?php
 if(@$_GET['func'] == 'edita'){  
 $id = $_GET['id'];
-$query = "select * from gastos where id = '$id'";
+$query = "select * from produtos where id = '$id'";
 $result = mysqli_query($conexao, $query);
 
  while($res_1 = mysqli_fetch_array($result)){
@@ -365,17 +297,23 @@ $result = mysqli_query($conexao, $query);
           <div class="modal-content">
             <div class="modal-header">
               
-              <h4 class="modal-title">Gastos</h4>
+              <h4 class="modal-title">Produtos</h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
               <form method="POST" action="">
-              <div class="form-group">
-                <label for="id_produto">Motivo</label>
-                <input type="text" class="form-control mr-2" name="txtmotivo" placeholder="Nome" value="<?php echo $res_1['motivo']; ?>" required>
+               <div class="form-group">
+                <label for="id_produto">Nome</label>
+                <input type="text" class="form-control mr-2" name="txtnome" placeholder="Cargo" value="<?php echo $res_1["produto"] ?>" required>
               </div>
-
-             
+              <div class="form-group">
+                <label for="id_produto">Valor</label>
+                <input type="text" class="form-control mr-2" name="txtvalor" placeholder="Valor" value="<?php echo $res_1["valor"] ?>" required>
+              </div>
+              <div class="form-group">
+                <label for="id_produto">Quantidade</label>
+                <input type="number" class="form-control mr-2" name="txtquantidade" placeholder="Quantidade" value="<?php echo $res_1["quantidade"] ?>" required>
+              </div>
               
             </div>
                    
@@ -397,15 +335,27 @@ $result = mysqli_query($conexao, $query);
 <!--Comando para editar os dados UPDATE -->
 <?php
 if(isset($_POST['buttonEditar'])){
-  $motivo = $_POST['txtmotivo'];
- 
+  $nome = $_POST['txtnome'];
+   $valor = $_POST['txtvalor'];
+   $quantidade = $_POST['txtquantidade'];
+    $valor = str_replace(',', '.', $valor);
+    $quantidade = str_replace(',', '.', $quantidade);
 
+    //VERIFICAR SE O CARGO JÁ ESTÁ CADASTRADO
+  if($res_1["produto"] != $nome){
+      $query_verificar = "select * from produtos where produto = '$nome' ";
 
+  $result_verificar = mysqli_query($conexao, $query_verificar);
+  $row_verificar = mysqli_num_rows($result_verificar);
+
+  if($row_verificar > 0){
+  echo "<script language='javascript'> window.alert('Produto já Cadastrado!'); </script>";
+  exit();
+  }
+  }
   
- 
 
-
-$query_editar = "UPDATE gastos set motivo = '$motivo' where id = '$id' ";
+$query_editar = "UPDATE produtos set produto = '$nome', valor = '$valor' where id = '$id' ";
 
 $result_editar = mysqli_query($conexao, $query_editar);
 
@@ -413,7 +363,7 @@ if($result_editar == ''){
   echo "<script language='javascript'> window.alert('Ocorreu um erro ao Editar!'); </script>";
 }else{
     echo "<script language='javascript'> window.alert('Editado com Sucesso!'); </script>";
-    echo "<script language='javascript'> window.location='gastos.php'; </script>";
+    echo "<script language='javascript'> window.location='estoque.php'; </script>";
 }
 
 }
@@ -424,4 +374,12 @@ if($result_editar == ''){
 
 
 
-   
+<link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css">
+ <script type="text/javascript" charset="utf8" src="DataTables/datatables.min.js"></script>
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#datatb').DataTable();
+} );
+</script>
