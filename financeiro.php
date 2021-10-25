@@ -23,6 +23,7 @@ include('conexao.php');
 </head>
 
 <body>
+
     <!-- Cabeçalho - Início -->
     <div id="area-cabecalho">
         <div id="area-logo">
@@ -35,7 +36,7 @@ include('conexao.php');
             <a href="servicos_admin.php"> <strong>Serviços</strong></a>
             <a href="estoque_admin.php"> <strong>Estoque</strong></a>
             <a href="financeiro.php"> <strong>Financeiro</strong></a>
-            <a href=""> <strong>Suporte</strong></a>
+            <a href="suporte_admin.php"> <strong>Suporte</strong></a>
             <a href="logout.php"> <strong>Sair</strong></a>
         </div>
     </div>
@@ -84,303 +85,302 @@ include('conexao.php');
 
     <br> <br>
 
-      <div class="content">
-        <div class="row">
-          <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="card card-stats">
-              <div class="card-body ">
-                <div class="row">
-                  <div class="col-5 col-md-4">
-                    <div class="icon-big text-center icon-warning">
-                      <i class="nc-icon nc-email-85 text-warning"></i>
-                    </div>
-                  </div>
-                  <div class="col-7 col-md-8">
-                    <div class="numbers">
-                      <h3 class="card-category">Serviços</h3>
-                      <?php
-
-                          //TOTALIZAR OS SERVIÇOS
-                          $total_serv = 0;
-                          $query_servicos = "select sum(valor) as total from movimentacoes where data = curDate() and movimento = 'Serviço' order by id asc"; 
-                          $result_servicos = mysqli_query($conexao, $query_servicos);
-                          
-                           while($res_serv = mysqli_fetch_array($result_servicos)){
-                            $total_serv = number_format($res_serv['total'], 2, ',', '.');
-                            ?>
-                              <p class="card-title"><small>R$ <?php echo $total_serv; 
-                              
-                              ?></small>
-
-                               <?php
-                            }
-
-                          ?>
-                      
-                        <p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-footer ">
-                <hr>
-                <div class="stats">
-                  <?php 
-                  $query_servicos = "select * from movimentacoes where data = curDate() and movimento = 'Serviço' order by id asc"; 
-                          $result_servicos = mysqli_query($conexao, $query_servicos);
-                  $numero_servicos = mysqli_num_rows($result_servicos);
-                  
-                  ?>
-                  <i class="fa fa-refresh"></i> Total de Serviços: <?php echo $numero_servicos; ?></a>
-                </div>
+<div class="content">
+  <div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-5 col-md-4">
+              <div class="icon-big text-center icon-warning">
+                <i class="nc-icon nc-email-85 text-warning"></i>
               </div>
             </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="card card-stats">
-              <div class="card-body ">
-                <div class="row">
-                  <div class="col-5 col-md-4">
-                    <div class="icon-big text-center icon-warning">
-                      <i class="nc-icon nc-money-coins text-success"></i>
-                    </div>
-                  </div>
-                  <div class="col-7 col-md-8">
-                    <div class="numbers">
-                      <h3 class="card-category">Vendas</h3>
+            <div class="col-7 col-md-8">
+              <div class="numbers">
+                <h3 class="card-category">Serviços</h3>
+                <?php
 
-                      <?php
+                    //TOTALIZAR OS SERVIÇOS
+                    $total_serv = 0;
+                    $query_servicos = "select sum(valor) as total from movimentacoes where data = curDate() and movimento = 'Serviço' order by id asc"; 
+                    $result_servicos = mysqli_query($conexao, $query_servicos);
+                    
+                     while($res_serv = mysqli_fetch_array($result_servicos)){
+                      $total_serv = number_format($res_serv['total'], 2, ',', '.');
+                      ?>
+                        <h1> <p class="card-title"><small>R$ <?php echo $total_serv; 
+                        
+                        ?></small> </h1>
 
-                          //TOTALIZAR DAS VENDAS
-                           $total_vendas = 0;
-                          $query_vendas = "select sum(valor) as total from vendas where data = curDate() and status = 'Efetuada' order by id asc"; 
-                          $result_vendas = mysqli_query($conexao, $query_vendas);
-                          
-                          
-                           while($res_vendas = mysqli_fetch_array($result_vendas)){
-                             $total_vendas = number_format($res_vendas['total'], 2, ',', '.');
-                            ?>
-                              <p class="card-title"><small>R$ <?php echo $total_vendas; 
-                              
-                              ?></small>
+                         <?php
+                      }
 
-                               <?php
-                            }
-
-                          ?>
-
-                     
-                        <p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-footer ">
-                <hr>
-                <div class="stats">
-                   <?php 
-                  $query_vendas = "select * from vendas where data = curDate() and status = 'Efetuada' order by id asc"; 
-                          $result_vendas = mysqli_query($conexao, $query_vendas);
-                  $numero_vendas = mysqli_num_rows($result_vendas);
-                  
-                  ?>
-                  <i class="fa fa-refresh"></i> Total de Vendas: <?php echo $numero_vendas; ?></a>
-                 
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="card card-stats">
-              <div class="card-body ">
-                <div class="row">
-                  <div class="col-5 col-md-4">
-                    <div class="icon-big text-center icon-warning">
-                      <i class="nc-icon nc-money-coins text-danger"></i>
-                    </div>
-                  </div>
-                  <div class="col-7 col-md-8">
-                    <div class="numbers">
-                      <h3 class="card-category">Gastos</h3>
-                       <?php
-
-                          //TOTALIZAR OS GASTOS
-                          $total_gastos = 0;
-                          $query_gastos = "select sum(valor) as total from gastos where data = curDate() order by id asc"; 
-                          $result_gastos = mysqli_query($conexao, $query_gastos);
-                          
-                           while($res_gastos = mysqli_fetch_array($result_gastos)){
-                             $total_gastos = number_format($res_gastos['total'], 2, ',', '.');
-                            ?>
-                              <p class="card-title"><small>R$ <?php echo $total_gastos; 
-                              
-                              ?></small>
-
-                               <?php
-                            }
-
-                          ?>
-                        <p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-footer ">
-                <hr>
-                <div class="stats">
-                   <?php 
-                  $query_gastos = "select * from gastos where data = curDate() order by id asc"; 
-                          $result_gastos = mysqli_query($conexao, $query_gastos);
-                  $numero_gastos = mysqli_num_rows($result_gastos);
-                  
-                  ?>
-                  <i class="fa fa-refresh"></i> Total de Gastos: <?php echo $numero_gastos; ?></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="card card-stats">
-              <div class="card-body ">
-                <div class="row">
-                  <div class="col-5 col-md-4">
-                    <div class="icon-big text-center icon-warning">
-                      <i class="nc-icon nc-bank text-primary"></i>
-                    </div>
-                  </div>
-                  <div class="col-7 col-md-8">
-                    <div class="numbers">
-                      <h3 class="card-category">Saldo Diário</h3>
-                       <?php
-
-                          //TOTALIZAR OS GASTOS
-
-                          $query_entradas = "select sum(valor) as total_entradas from movimentacoes where data = curDate() and tipo = 'Entrada' order by id asc"; 
-                          $result_entradas = mysqli_query($conexao, $query_entradas);
-                          
-                           while($res_entradas = mysqli_fetch_array($result_entradas)){
-
-
-                            //totalizar as saidas
-                            $query_saidas = "select sum(valor) as total_saidas from movimentacoes where data = curDate() and tipo = 'Saída' order by id asc"; 
-                          $result_saidas = mysqli_query($conexao, $query_saidas);
-                          
-                           while($res_saidas = mysqli_fetch_array($result_saidas)){
-
-                            ?>
-                              <p class="card-title"><small>
-
-                                <?php
-                                $total_mov = 0;
-                               $total = $res_entradas['total_entradas'] - $res_saidas['total_saidas']; 
-                                $total_mov = number_format($total, 2, ',', '.'); 
-                              if ($total >= 0){
-                               echo '<font color="green"> R$ '  .$total_mov. ' </font>';
-                              } else{
-                               echo '<font color="red">  R$ '  .$total_mov. ' </font>';
-                              } 
-
-                              
-                              ?></small>
-
-                               <?php
-                            } }
-
-                          ?>
-                        <p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-footer ">
-                <hr>
-                <div class="stats">
-                   <?php 
-                  $query_mov = "select * from movimentacoes where data = curDate() order by id asc"; 
-                          $result_mov = mysqli_query($conexao, $query_mov);
-                  $numero_mov = mysqli_num_rows($result_mov);
-                  
-                  ?>
-                  <i class="fa fa-refresh"></i> Total Movimentações: <?php echo $numero_mov; ?></a>
-                </div>
+                    ?>
+                
+                  <p>
               </div>
             </div>
           </div>
         </div>
+        <div class="card-footer ">
+          <hr>
+          <div class="stats">
+            <?php 
+            $query_servicos = "select * from movimentacoes where data = curDate() and movimento = 'Serviço' order by id asc"; 
+                    $result_servicos = mysqli_query($conexao, $query_servicos);
+            $numero_servicos = mysqli_num_rows($result_servicos);
+            
+            ?>
+            <i class="fa fa-refresh"></i> Total de Serviços: <?php echo $numero_servicos; ?></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-5 col-md-4">
+              <div class="icon-big text-center icon-warning">
+                <i class="nc-icon nc-money-coins text-success"></i>
+              </div>
+            </div>
+            <div class="col-7 col-md-8">
+              <div class="numbers">
+                <h3 class="card-category">Vendas</h3>
+
+                <?php
+
+                    //TOTALIZAR DAS VENDAS
+                     $total_vendas = 0;
+                    $query_vendas = "select sum(valor) as total from vendas where data = curDate() and status = 'Efetuada' order by id asc"; 
+                    $result_vendas = mysqli_query($conexao, $query_vendas);
+                    
+                    
+                     while($res_vendas = mysqli_fetch_array($result_vendas)){
+                       $total_vendas = number_format($res_vendas['total'], 2, ',', '.');
+                      ?>
+                        <h1> <p class="card-title"><small>R$ <?php echo $total_vendas; 
+                        
+                        ?></small> </h1>
+
+                         <?php
+                      }
+
+                    ?>
+
+               
+                  <p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer ">
+          <hr>
+          <div class="stats">
+             <?php 
+            $query_vendas = "select * from vendas where data = curDate() and status = 'Efetuada' order by id asc"; 
+                    $result_vendas = mysqli_query($conexao, $query_vendas);
+            $numero_vendas = mysqli_num_rows($result_vendas);
+            
+            ?>
+            <i class="fa fa-refresh"></i> Total de Vendas: <?php echo $numero_vendas; ?></a>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-5 col-md-4">
+              <div class="icon-big text-center icon-warning">
+                <i class="nc-icon nc-money-coins text-danger"></i>
+              </div>
+            </div>
+            <div class="col-7 col-md-8">
+              <div class="numbers">
+                <h3 class="card-category">Gastos</h3>
+                 <?php
+
+                    //TOTALIZAR OS GASTOS
+                    $total_gastos = 0;
+                    $query_gastos = "select sum(valor) as total from gastos where data = curDate() order by id asc"; 
+                    $result_gastos = mysqli_query($conexao, $query_gastos);
+                    
+                     while($res_gastos = mysqli_fetch_array($result_gastos)){
+                       $total_gastos = number_format($res_gastos['total'], 2, ',', '.');
+                      ?>
+                        <h1> <p class="card-title"><small>R$ <?php echo $total_gastos; 
+                        
+                        ?></small> </h1>
+
+                         <?php
+                      }
+
+                    ?>
+                  <p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer ">
+          <hr>
+          <div class="stats">
+             <?php 
+            $query_gastos = "select * from gastos where data = curDate() order by id asc"; 
+                    $result_gastos = mysqli_query($conexao, $query_gastos);
+            $numero_gastos = mysqli_num_rows($result_gastos);
+            
+            ?>
+            <i class="fa fa-refresh"></i> Total de Gastos: <?php echo $numero_gastos; ?></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-5 col-md-4">
+              <div class="icon-big text-center icon-warning">
+                <i class="nc-icon nc-bank text-primary"></i>
+              </div>
+            </div>
+            <div class="col-7 col-md-8">
+              <div class="numbers">
+                <h3 class="card-category">Saldo Diário</h3>
+                 <?php
+
+                    //TOTALIZAR OS GASTOS
+
+                    $query_entradas = "select sum(valor) as total_entradas from movimentacoes where data = curDate() and tipo = 'Entrada' order by id asc"; 
+                    $result_entradas = mysqli_query($conexao, $query_entradas);
+                    
+                     while($res_entradas = mysqli_fetch_array($result_entradas)){
+
+
+                      //totalizar as saidas
+                      $query_saidas = "select sum(valor) as total_saidas from movimentacoes where data = curDate() and tipo = 'Saída' order by id asc"; 
+                    $result_saidas = mysqli_query($conexao, $query_saidas);
+                    
+                     while($res_saidas = mysqli_fetch_array($result_saidas)){
+
+                      ?>
+                        <h1> <p class="card-title"><small>
+
+                          <?php
+                          $total_mov = 0;
+                         $total = $res_entradas['total_entradas'] - $res_saidas['total_saidas']; 
+                          $total_mov = number_format($total, 2, ',', '.'); 
+                        if ($total >= 0){
+                         echo '<font color="green"> R$ '  .$total_mov. ' </font>';
+                        } else{
+                         echo '<font color="red">  R$ '  .$total_mov. ' </font>';
+                        } 
+
+                        
+                        ?></small> </h1>
+
+                         <?php
+                      } }
+
+                    ?>
+                  <p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer ">
+          <hr>
+          <div class="stats">
+             <?php 
+            $query_mov = "select * from movimentacoes where data = curDate() order by id asc"; 
+                    $result_mov = mysqli_query($conexao, $query_mov);
+            $numero_mov = mysqli_num_rows($result_mov);
+            
+            ?>
+            <i class="fa fa-refresh"></i> Total Movimentações: <?php echo $numero_mov; ?></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 <p class="mt-5">ÚLTIMAS MOVIMENTAÇÕES</p>
-        <hr >
+  <hr >
 
-        <div class="row">
+  <div class="row">
 
-          <?php 
+    <?php 
 
-           $query = "select * from movimentacoes where data >= curDate()  order by id desc limit 4";
+     $query = "select * from movimentacoes where data >= curDate()  order by id desc limit 4";
 
-            $result = mysqli_query($conexao, $query);
-                        //$dado = mysqli_fetch_array($result);
-                        $row = mysqli_num_rows($result);
+      $result = mysqli_query($conexao, $query);
+                  //$dado = mysqli_fetch_array($result);
+                  $row = mysqli_num_rows($result);
 
-                         if($row == ''){
+                   if($row == ''){
 
-                            echo "<h5> Não existem movimentações Hoje!! </h5>";
+                      echo "<h5> Não existem movimentações Hoje!! </h5>";
 
-                        }else{
+                  }else{
 
-                            while($res_1 = mysqli_fetch_array($result)){
-                            $tipo = $res_1["tipo"];
-                            $movimento = $res_1["movimento"];
-                            $valor = $res_1["valor"];
-                            $funcionario = $res_1["funcionario"];
+                      while($res_1 = mysqli_fetch_array($result)){
+                      $tipo = $res_1["tipo"];
+                      $movimento = $res_1["movimento"];
+                      $valor = $res_1["valor"];
+                      $funcionario = $res_1["funcionario"];
 
-                            
+                      
 
 
-           ?>
+     ?>
 
-           <?php 
+     <?php 
 
-           if($tipo == 'Entrada'){
+     if($tipo == 'Entrada'){
 
-            ?>
-             <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
-                <div class="card-header" style="font-size: 16px"><?php echo $movimento ?></div>
-                <div class="card-body">
-                  <h5 class="card-title">R$ <?php echo $valor ?></h5>
-                  <p class="card-text"><?php echo $funcionario ?></p>
-                </div>
-              </div>
+      ?>
+       <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+          <div class="card-header" style="font-size: 16px"><?php echo $movimento ?></div>
+          <div class="card-body">
+            <h5 class="card-title">R$ <?php echo $valor ?></h5>
+            <p class="card-text"><?php echo $funcionario ?></p>
           </div>
-            <?php
-           }else{
-
-             ?>
-              <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
-                <div class="card-header" style="font-size: 16px"><?php echo $movimento ?></div>
-                <div class="card-body">
-                  <h5 class="card-title">R$ <?php echo $valor ?></h5>
-                  <p class="card-text"><?php echo $funcionario ?></p>
-                </div>
-              </div>
-          </div>
-            <?php
-
-           } }
-
-            ?>
-
-         
-
-        <?php } ?>
-
-        
-
-
         </div>
-        
+    </div>
+      <?php
+     }else{
+
+       ?>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+          <div class="card-header" style="font-size: 16px"><?php echo $movimento ?></div>
+          <div class="card-body">
+            <h5 class="card-title">R$ <?php echo $valor ?></h5>
+            <p class="card-text"><?php echo $funcionario ?></p>
+          </div>
+        </div>
+    </div>
+      <?php
+
+     } }
+
+      ?>
+
+   
+
+  <?php } ?>
+
+  
+
+
+  </div>
   <!--   Core JS Files   -->
   <script src="assets/js/core/jquery.min.js"></script>
   <script src="assets/js/core/popper.min.js"></script>
@@ -403,8 +403,15 @@ include('conexao.php');
     });
   </script>
 
-  <!-- Modal -->
-  <div id="modalExemplo" class="modal fade" role="dialog">
+
+
+
+
+
+
+
+ <!-- Modal -->
+      <div id="modalExemplo" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg">
          <!-- Modal content-->
           <div class="modal-content">
@@ -640,12 +647,14 @@ include('conexao.php');
             </div>
           </div>
         </div>
-      </div>
+      </div> 
 
     <!-- Área - Rodapé -->
     <div id="rodape">
         Todos os direitos reservados.
     </div>
+    </div>
+
 </body>
 
 </html>

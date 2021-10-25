@@ -7,7 +7,8 @@ include('conexao.php');
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GEMIC - Fechar Orçamentos</title>
+    <title>GEMIC - Relatório de Orçamentos</title>
+  
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -28,32 +29,42 @@ include('conexao.php');
         </div>
 
         <div id="area-menu">
-            <a href="dashboard_auxiliar.php"> <strong>Dashboard</strong></a>
+            <a href="dashboard_admin.php"> <strong>Dashboard</strong></a>
             <a href="clientes.php"> <strong>Clientes</strong></a>
-            <a href="fechar_orcamentos.php"> <strong>Serviços</strong></a>
+            <a href="servicos.php"> <strong>Serviços</strong></a>
             <a href="estoque.php"> <strong>Estoque</strong></a>
-            <a href="suporte.php"> <strong>Suporte</strong></a>
+            <a href="suporte_admin.php"> <strong>Suporte</strong></a>
             <a href="logout.php"> <strong>Sair</strong></a>
         </div>
     </div>
     <!-- Cabeçalho - Fim -->
 
 
-
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="listar_orcamentos.php"><big><big><i class="fa fa-arrow-left"></i></big></big></a>
+  <a class="navbar-brand" href="listar_orcamentos_admin.php"><big><big><i class="fa fa-arrow-left"></i></big></big></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
     <ul class="navbar-nav mr-auto">
-
       
     </ul>
-   
+    <form class="form-inline my-2 my-lg-0">
+
+      <select class="form-control mr-2" id="category" name="status">
+        
+         
+           <option value="Aguardando">Aguardando</option> 
+            <option value="Aprovado">Aprovado</option> 
+            
+      </select>
+
+      <input name="txtpesquisar" class="form-control mr-sm-2" type="date" placeholder="Pesquisar" aria-label="Pesquisar">
+      <button name="buttonPesquisar" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+    </form>
   </div>
-  </nav>
+</nav>
 
 
 
@@ -68,8 +79,7 @@ include('conexao.php');
 
 
          <div class="row">
-           
-
+          
           
         </div>
 
@@ -79,7 +89,7 @@ include('conexao.php');
               <div class="col-md-12">
                 <div class="card">
                   <div class="card-header">
-                    <h4 class="card-title"> Em Aberto </h4>
+                    <h4 class="card-title"> Aguardando Aprovação </h4>
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
@@ -87,13 +97,30 @@ include('conexao.php');
                       <!--LISTAR TODOS OS ORÇAMENTOS -->
 
                       <?php
-                        
-                        $usuario = $_SESSION['nome_usuario'];
-                        if(isset($_GET['buttonPesquisar']) and $_GET['txtpesquisar'] != ''){
+
+
+                        if(isset($_GET['buttonPesquisar']) and $_GET['txtpesquisar'] != '' and $_GET['status'] != 'Aguardando' ){
                           $data = $_GET['txtpesquisar'] . '%';
-                           $query = "select o.id, o.cliente, o.tecnico, o.produto, o.problema, o.status, o.data_abertura, c.nome as cli_nome, f.nome as func_nome from orcamentos as o INNER JOIN clientes as c on o.cliente = c.cpf INNER JOIN funcionarios as f on o.tecnico = f.id where  f.nome = '$usuario' and o.status = 'Aberto' order by o.id asc"; 
+                         
+
+                           $query = "select o.id, o.cliente, o.tecnico, o.produto, o.valor_total, o.status, o.data_abertura, c.nome as cli_nome, c.telefone, c.email, f.nome as func_nome from orcamentos as o INNER JOIN clientes as c on o.cliente = c.cpf INNER JOIN funcionarios as f on o.tecnico = f.id where data_abertura = '$data' and status = 'Aprovado' order by id asc";
+
+                         }else if (isset($_GET['buttonPesquisar']) and $_GET['txtpesquisar'] == '' and $_GET['status'] != 'Aguardando' ){
+                          $data = $_GET['txtpesquisar'] . '%';
+                         
+
+                           $query = "select o.id, o.cliente, o.tecnico, o.produto, o.valor_total, o.status, o.data_abertura, c.nome as cli_nome, c.telefone, c.email, f.nome as func_nome from orcamentos as o INNER JOIN clientes as c on o.cliente = c.cpf INNER JOIN funcionarios as f on o.tecnico = f.id where data_abertura = curDate() and status = 'Aprovado' order by id asc";
+
+                        
+                          }else if (isset($_GET['buttonPesquisar']) and $_GET['txtpesquisar'] != '' and $_GET['status'] == 'Aguardando' ){
+                          $data = $_GET['txtpesquisar'] . '%';
+                         
+
+                           $query = "select o.id, o.cliente, o.tecnico, o.produto, o.valor_total, o.status, o.data_abertura, c.nome as cli_nome, c.telefone, c.email, f.nome as func_nome from orcamentos as o INNER JOIN clientes as c on o.cliente = c.cpf INNER JOIN funcionarios as f on o.tecnico = f.id where data_abertura = '$data' and status = 'Aguardando' order by id asc";
+                         
+
                         }else{
-                         $query = "select o.id, o.cliente, o.tecnico, o.produto, o.valor_total, o.problema, o.status, o.data_abertura, c.nome as cli_nome, f.nome as func_nome from orcamentos as o INNER JOIN clientes as c on o.cliente = c.cpf INNER JOIN funcionarios as f on o.tecnico = f.id where  f.nome = '$usuario' and o.status = 'Aberto'  order by o.id asc"; 
+                         $query = "select o.id, o.cliente, o.tecnico, o.produto, o.valor_total, o.status, o.data_abertura, c.nome as cli_nome, c.telefone, c.email, f.nome as func_nome from orcamentos as o INNER JOIN clientes as c on o.cliente = c.cpf INNER JOIN funcionarios as f on o.tecnico = f.id where status = 'Aguardando'  order by data_abertura asc"; 
                         }
 
                         
@@ -125,10 +152,10 @@ include('conexao.php');
                             Produto
                           </th>
                            <th>
-                            Defeito
+                            Data
                           </th>
                             <th>
-                            Data Abertura
+                            Telefone
                           </th>
                            </th>
                            
@@ -145,12 +172,14 @@ include('conexao.php');
                             $cliente = $res_1["cli_nome"];
                             $tecnico = $res_1["func_nome"];
                             $produto = $res_1["produto"];
-                            $defeito = $res_1["problema"];
-                            $data_abertura = $res_1["data_abertura"];
+                            $data = $res_1["data_abertura"];
+                            $tel = $res_1["telefone"];
+                            $email = $res_1["email"];
                            
                             $id = $res_1["id"];
-                            $data2 = implode('/', array_reverse(explode('-', $data_abertura)));
-                         
+                             $data2 = implode('/', array_reverse(explode('-', $data)));
+
+                           
                             ?>
 
                             <tr>
@@ -158,14 +187,18 @@ include('conexao.php');
                              <td><?php echo $cliente; ?></td>
                              <td><?php echo $tecnico; ?></td> 
                              <td><?php echo $produto; ?></td>
-                             <td><?php echo $defeito; ?></td>
                              <td><?php echo $data2; ?></td>
+                             <td><?php echo $tel; ?></td>
+
+
                              
                            
                              <td>
-                             <a title="Fechar Orçamento" class="btn btn-success" href="fechar_orcamentos.php?func=edita&id=<?php echo $id; ?>"><i class="fa fa-check-square"></i></a>
+                             <a title="Relatório do Orçamento" class="btn btn-info" href="rel/rel_orcamentos_class.php?id=<?php echo $id; ?>&email=<?php echo $email; ?>" target="_blank"><i class="fa fa-sticky-note"></i></a>
 
-                            
+                              <?php if(@$_GET['status'] != 'Aprovado'){ ?>
+                             <a title="Aprovar Orçamento" class="btn btn-success" href="rel_orcamentos.php?func=edita&id=<?php echo $id; ?>"><i class="fa fa-check-circle"></i></a>
+                           <?php } ?>
 
                              </td>
                             </tr>
@@ -189,11 +222,13 @@ include('conexao.php');
 
 
 
+
+ 
     <!-- Área - Rodapé -->
     <div id="rodape">
-          Todos os direitos reservados.
+        Todos os direitos reservados.
     </div>
- 
+    </div>
 
 
 
@@ -205,12 +240,22 @@ include('conexao.php');
 
 
 
-<!--FECHAR ORÇAMENTO -->
+
+<!--EDITAR -->
 <?php
-
 if(@$_GET['func'] == 'edita'){  
+$id = $_GET['id'];
+$query = "select * from orcamentos where id = '$id'";
+$result = mysqli_query($conexao, $query);
 
-  ?>
+ while($res_1 = mysqli_fetch_array($result)){
+$total = $res_1['total'];
+$cliente = $res_1['cliente'];
+$produto = $res_1['produto'];
+$tecnico = $res_1['tecnico'];
+}
+
+?>
 
  <!-- Modal -->
       <div id="modalEditar" class="modal fade" role="dialog">
@@ -219,35 +264,28 @@ if(@$_GET['func'] == 'edita'){
           <div class="modal-content">
             <div class="modal-header">
               
-              <h4 class="modal-title">Fechar Orçamento</h4>
+              <h4 class="modal-title">Aprovar Orçamento</h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
               <form method="POST" action="">
              
-              
-              
-              
-               <div class="form-group">
-                <label for="quantidade">Valor Serviço</label>
-                <input type="text" class="form-control mr-2" name="txtvalor" placeholder="Valor Mão de Obra" required>
-              </div>
-
-               <div class="form-group">
-                <label for="quantidade">Peças</label>
-                <input type="text" class="form-control mr-2" name="txtpecas" placeholder="Nome das Peças" required>
-              </div>
-
-
-                <div class="form-group">
-                <label for="quantidade">Valor Peças</label>
-                <input type="text" class="form-control mr-2" name="txtvalorPecas" placeholder="Valor das Peças" required>
-              </div>
-
               <div class="form-group">
-                <label for="quantidade">Laudo</label>
-                <textarea class="form-control mr-2" name="txtlaudo" placeholder="Laudo Técnico" required> </textarea>
+               <label for="fornecedor">Forma de Pagamento</label>
+                
+                  <select class="form-control mr-2" id="category" name="pgto">
+                 
+                                                                 
+                    <option value="Dinheiro"> Dinheiro </option> 
+                    <option value="Cartão"> Cartão</option> 
+                       
+                  </select>
               </div>
+              <div class="form-group">
+                <label for="quantidade">Desconto</label>
+                <input type="text" class="form-control mr-2" name="txtdesconto" value="" placeholder="Desconto" required>
+              </div>
+              
               
              
             </div>
@@ -269,33 +307,31 @@ if(@$_GET['func'] == 'edita'){
 
 <!--Comando para editar os dados UPDATE -->
 <?php
-
-
-$id = $_GET['id'];
-
 if(isset($_POST['buttonEditar'])){
   
-  $laudo = $_POST['txtlaudo'];
-  $valor_servico = $_POST['txtvalor'];
-  $pecas = $_POST['txtpecas'];
-  
-  $valor_pecas = $_POST['txtvalorPecas'];
-  $desconto = 0;
-  $valor_total = $_POST['txtvalor'] + $_POST['txtvalorPecas'];
-  $status = 'Aguardando';
+  $pgto = $_POST['pgto'];
+  $desconto = $_POST['txtdesconto'];
+  $valor_total = $total - $desconto;
 
 
-
-
-$query_editar = "UPDATE orcamentos set laudo = '$laudo', valor_servico = '$valor_servico', pecas = '$pecas', valor_pecas = '$valor_pecas', desconto = '$desconto', total = '$valor_total', valor_total = '$valor_total', data_geracao = curDate(), status = '$status' where id = '$id' ";
+$query_editar = "UPDATE orcamentos set desconto = '$desconto', valor_total = '$valor_total', pgto = '$pgto', data_aprovacao = curDate(), status = 'Aprovado' where id = '$id' ";
 
 $result_editar = mysqli_query($conexao, $query_editar);
+
+
+
+//FAZER A ABERTURA DA OS
+$query_os = "INSERT INTO os (id_orc, cliente, produto, tecnico, total, data_abertura, status) VALUES ('$id', '$cliente',  '$produto', '$tecnico', '$valor_total', curDate(), 'Aberta')";
+
+mysqli_query($conexao, $query_os);
+
+
 
 if($result_editar == ''){
   echo "<script language='javascript'> window.alert('Ocorreu um erro ao Editar!'); </script>";
 }else{
     echo "<script language='javascript'> window.alert('Editado com Sucesso!'); </script>";
-    echo "<script language='javascript'> window.location='fechar_orcamentos.php'; </script>";
+    echo "<script language='javascript'> window.location='rel_orcamentos.php'; </script>";
 }
 
 }
@@ -305,15 +341,3 @@ if($result_editar == ''){
 <?php }  ?>
 
 
-<!--MASCARAS -->
-
-<script type="text/javascript">
-    $(document).ready(function(){
-      $('#txttelefone').mask('(00) 00000-0000');
-      $('#txtcpf').mask('000.000.000-00');
-      });
-</script>
-
-
-
-   

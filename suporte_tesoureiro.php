@@ -21,11 +21,12 @@
         </div>
 
         <div id="area-menu">
-            <a href="dashboard_auxiliar.php"> <strong>Dashboard</strong></a>
-            <a href="clientes.php"> <strong>Clientes</strong></a>
-            <a href="servicos.php"> <strong>Serviços</strong></a>
-            <a href="estoque.php"> <strong>Estoque</strong></a>
-            <a href="suporte.php"> <strong>Suporte</strong></a>
+            <a href="dashboard_tesouraria.php"> <strong>Dashboard</strong></a>
+            <a href="movimentacoes.php"> <strong>Movimentações</strong></a>
+            <a href="receitas.php"> <strong>Receitas</strong></a>
+            <a href="despesas.php"> <strong>Despesas</strong></a>
+            <a href="pagamentos.php"> <strong>Pagamentos</strong></a>
+            <a href="suporte_tesoureiro.php"> <strong>Suporte</strong></a>
             <a href="logout.php"> <strong>Sair</strong></a>
         </div>
     </div>

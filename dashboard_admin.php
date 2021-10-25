@@ -33,7 +33,7 @@ include('conexao.php');
             <a href="servicos_admin.php"> <strong>Serviços</strong></a>
             <a href="estoque_admin.php"> <strong>Estoque</strong></a>
             <a href="financeiro.php"> <strong>Financeiro</strong></a>
-            <a href=""> <strong>Suporte</strong></a>
+            <a href="suporte_admin.php"> <strong>Suporte</strong></a>
             <a href="logout.php"> <strong>Sair</strong></a>
         </div>
     </div>
@@ -158,7 +158,7 @@ include('conexao.php');
                   </div>
                   <div class="col-7 col-md-8">
                     <div class="numbers">
-                      <h3 class="card-category">Aprovação</h3>
+                      <h3 class="card-category">Aguardando</h3>
 
                        <?php 
                   $query = "select * from orcamentos where status = 'Aguardando' order by id asc"; 

@@ -37,7 +37,7 @@ include('conexao.php');
             <a href="servicos_admin.php"> <strong>Serviços</strong></a>
             <a href="estoque_admin.php"> <strong>Estoque</strong></a>
             <a href="financeiro.php"> <strong>Financeiro</strong></a>
-            <a href=""> <strong>Suporte</strong></a>
+            <a href="suporte_admin.php"> <strong>Suporte</strong></a>
             <a href="logout.php"> <strong>Sair</strong></a>
         </div>
     </div>
@@ -53,8 +53,8 @@ include('conexao.php');
       <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
         <ul class="navbar-nav mr-auto">
 
-        <a href="abrir_orcamentos_admin.php"> <strong>Abrir O.S.</strong></a> &nbsp;|&nbsp;
-        <a href="fechar_orcamentos_admin.php"> <strong>Consultar O.S</strong></a>
+        <a href="abrir_os_admin.php"> <strong>Abrir O.S.</strong></a> &nbsp;|&nbsp;
+        <a href="consultar_os_admin.php"> <strong>Consultar O.S</strong></a>
       
         </ul>
         <form class="form-inline my-2 my-lg-0 mr-5">

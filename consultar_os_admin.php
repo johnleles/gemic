@@ -32,7 +32,7 @@ include('conexao.php');
             <a href="clientes.php"> <strong>Clientes</strong></a>
             <a href="servicos.php"> <strong>Serviços</strong></a>
             <a href="rel_orcamentos.php"> <strong>Relatório</strong></a>
-            <a href="suporte.php"> <strong>Suporte</strong></a>
+            <a href="suporte_admin.php"> <strong>Suporte</strong></a>
             <a href="logout.php"> <strong>Sair</strong></a>
         </div>
     </div>
@@ -41,7 +41,7 @@ include('conexao.php');
 
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="servicos.php"><big><big><i class="fa fa-arrow-left"></i></big></big></a>
+  <a class="navbar-brand" href="listar_os_admin.php"><big><big><i class="fa fa-arrow-left"></i></big></big></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
     <span class="navbar-toggler-icon"></span>
   </button>

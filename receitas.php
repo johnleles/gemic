@@ -31,7 +31,7 @@ include('conexao.php');
             <a href="receitas.php"> <strong>Receitas</strong></a>
             <a href="despesas.php"> <strong>Despesas</strong></a>
             <a href="pagamentos.php"> <strong>Pagamentos</strong></a>
-            <a href=""> <strong>Suporte</strong></a>
+            <a href="suporte.php"> <strong>Suporte</strong></a>
             <a href="logout.php"> <strong>Sair</strong></a>
         </div>
     </div>

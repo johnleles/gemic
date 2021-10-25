@@ -7,39 +7,24 @@ include('conexao.php');
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Clientes</title>
+  <title>GEMIC - Administrativo</title>
 
 
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-  
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
-
-
-
-
-
-
-
   <link rel="stylesheet" type="text/css" href="css/estilo.css">
-
 </head>
 
 
 <body>
 
-  <!-- Cabeçalho - Início -->
-  <div id="area-cabecalho">
+    <!-- Cabeçalho - Início -->
+    <div id="area-cabecalho">
         <div id="area-logo">
             <h1> GE<span class="branco">MIC</span> </h1>
         </div>
@@ -50,7 +35,7 @@ include('conexao.php');
             <a href="servicos_admin.php"> <strong>Serviços</strong></a>
             <a href="estoque_admin.php"> <strong>Estoque</strong></a>
             <a href="financeiro.php"> <strong>Financeiro</strong></a>
-            <a href=""> <strong>Suporte</strong></a>
+            <a href="suporte_admin.php"> <strong>Suporte</strong></a>
             <a href="logout.php"> <strong>Sair</strong></a>
         </div>
     </div>
@@ -207,9 +192,9 @@ include('conexao.php');
                              <td><?php echo $cpf; ?></td>
                              <td><?php echo $data2; ?></td>
                              <td>
-                             <a title="Editar Registro" class="text-info" href="clientes.php?func=edita&id=<?php echo $id; ?>"><i class="fa fa-pencil-square-o"></i></a>
+                             <a title="Editar Registro" class="text-info" href="administrativo.php?func=edita&id=<?php echo $id; ?>"><i class="fa fa-pencil-square-o"></i></a>
 
-                             <a title="Excluir Registro" class="text-danger" href="clientes.php?func=deleta&id=<?php echo $id; ?>"><i class="fa fa-minus-square"></i></a>
+                             <a title="Excluir Registro" class="text-danger" href="administrativo.php?func=deleta&id=<?php echo $id; ?>"><i class="fa fa-minus-square"></i></a>
 
                              </td>
                             </tr>
@@ -331,7 +316,7 @@ if($result == ''){
   echo "<script language='javascript'> window.alert('Ocorreu um erro ao Cadastrar!'); </script>";
 }else{
     echo "<script language='javascript'> window.alert('Salvo com Sucesso!'); </script>";
-    echo "<script language='javascript'> window.location='clientes.php'; </script>";
+    echo "<script language='javascript'> window.location='administrativo.php'; </script>";
 }
 
 }
@@ -344,7 +329,7 @@ if(@$_GET['func'] == 'deleta'){
   $id = $_GET['id'];
   $query = "DELETE FROM clientes where id = '$id'";
   mysqli_query($conexao, $query);
-  echo "<script language='javascript'> window.location='clientes.php'; </script>";
+  echo "<script language='javascript'> window.location='administrativo.php'; </script>";
 }
 ?>
 
@@ -447,7 +432,7 @@ if($result_editar == ''){
   echo "<script language='javascript'> window.alert('Ocorreu um erro ao Editar!'); </script>";
 }else{
     echo "<script language='javascript'> window.alert('Editado com Sucesso!'); </script>";
-    echo "<script language='javascript'> window.location='clientes.php'; </script>";
+    echo "<script language='javascript'> window.location='administrativo.php'; </script>";
 }
 
 }

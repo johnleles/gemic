@@ -22,7 +22,7 @@ if($row > 0){
     $_SESSION['nome_usuario'] = $dado['nome'];
     $_SESSION['cargo_usuario'] = $dado['cargo'];
 
-    if($_SESSION['cargo_usuario'] == 'Admin' || $_SESSION['cargo_usuario'] == 'Gerente') {
+    if($_SESSION['cargo_usuario'] == 'Administrador' || $_SESSION['cargo_usuario'] == 'Gerente') {
         header('Location: dashboard_admin.php');
         exit();
     }

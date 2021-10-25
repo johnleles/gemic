@@ -33,7 +33,7 @@ include('conexao.php');
             <a href="servicos.php"> <strong>Serviços</strong></a>
             <a href="Estoque.php"> <strong>Estoque</strong></a>
             <a href="financeiro.php"> <strong>Financeiro</strong></a>
-            <a href="suporte.php"> <strong>Suporte</strong></a>
+            <a href="suporte_admin.php"> <strong>Suporte</strong></a>
             <a href="logout.php"> <strong>Sair</strong></a>
         </div>
     </div>

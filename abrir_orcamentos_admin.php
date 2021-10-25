@@ -34,7 +34,7 @@ include('conexao.php');
             <a href="servicos_admin.php"> <strong>Serviços</strong></a>
             <a href="estoque_admin.php"> <strong>Estoque</strong></a>
             <a href="financeiro.php"> <strong>Financeiro</strong></a>
-            <a href=""> <strong>Suporte</strong></a>
+            <a href="suporte_admin.php"> <strong>Suporte</strong></a>
             <a href="logout.php"> <strong>Sair</strong></a>
         </div>
     </div>
@@ -186,9 +186,9 @@ include('conexao.php');
 
 
            <td>
-             <a class="btn btn-info" href="abrir_orcamentos.php?func=edita&id=<?php echo $id; ?>"><i class="fa fa-pencil-square-o"></i></a>
+             <a class="btn btn-info" href="abrir_orcamentos_admin.php?func=edita&id=<?php echo $id; ?>"><i class="fa fa-pencil-square-o"></i></a>
 
-             <a class="btn btn-danger" href="abrir_orcamentos.php?func=deleta&id=<?php echo $id; ?>"><i class="fa fa-minus-square"></i></a>
+             <a class="btn btn-danger" href="abrir_orcamentos_admin.php?func=deleta&id=<?php echo $id; ?>"><i class="fa fa-minus-square"></i></a>
 
            </td>
          </tr>
@@ -251,10 +251,10 @@ include('conexao.php');
         <div class="form-group">
          <label for="fornecedor">Técnico</label>
 
-         <select data-width="100%" class="form-control mr-2 select2" id="cat" name="funcionario">
+         <select data-width="100%" class="form-control mr-2 select2" id="cat" name="auxiliar">
           <?php
 
-          $query = "SELECT * FROM funcionarios where cargo = 'Funcionário' ORDER BY nome asc";
+          $query = "SELECT * FROM funcionarios where cargo = 'Auxiliar' ORDER BY nome asc";
           $result = mysqli_query($conexao, $query);
 
           if(mysqli_num_rows($result)){
@@ -282,7 +282,7 @@ include('conexao.php');
 <div class="col-md-4">
 
   <div class="form-group">
-    <label for="quantidade">Num Série</label>
+    <label for="quantidade">Número de Série</label>
     <input type="text" class="form-control mr-2" name="txtserie" placeholder="Número de Série" required>
   </div>
 </div>
@@ -332,7 +332,7 @@ include('conexao.php');
 <?php
 if(isset($_POST['button'])){
   $nome = $_POST['txtcpf'];
-  $tecnico = $_POST['funcionario'];
+  $tecnico = $_POST['auxiliar'];
   $produto = $_POST['txtproduto'];
   $serie = $_POST['txtserie'];
   $defeito = $_POST['txtdefeito'];
@@ -362,7 +362,7 @@ if(isset($_POST['button'])){
     echo "<script language='javascript'> window.alert('Ocorreu um erro ao Cadastrar!'); </script>";
   }else{
     echo "<script language='javascript'> window.alert('Salvo com Sucesso!'); </script>";
-    echo "<script language='javascript'> window.location='abrir_orcamentos.php'; </script>";
+    echo "<script language='javascript'> window.location='abrir_orcamentos_admin.php'; </script>";
   }
 
 }
@@ -375,7 +375,7 @@ if(@$_GET['func'] == 'deleta'){
   $id = $_GET['id'];
   $query = "DELETE FROM orcamentos where id = '$id'";
   mysqli_query($conexao, $query);
-  echo "<script language='javascript'> window.location='abrir_orcamentos.php'; </script>";
+  echo "<script language='javascript'> window.location='abrir_orcamentos_admin.php'; </script>";
 }
 ?>
 
@@ -434,10 +434,10 @@ if(@$_GET['func'] == 'edita'){
         <div class="form-group">
          <label for="fornecedor">Técnico</label>
 
-         <select data-width="100%" class="form-control mr-2 select2edit" id="cat2" name="funcionario">
+         <select data-width="100%" class="form-control mr-2 select2edit" id="cat2" name="auxiliar">
           <?php
 
-          $query = "SELECT * FROM funcionarios where cargo = 'Funcionário' ORDER BY nome asc";
+          $query = "SELECT * FROM funcionarios where cargo = 'Auxiliar' ORDER BY nome asc";
           $result = mysqli_query($conexao, $query);
 
           if(mysqli_num_rows($result)){
@@ -509,7 +509,7 @@ if(@$_GET['func'] == 'edita'){
 if(isset($_POST['buttonEditar'])){
 
   $cliente = $_POST['txtcpf'];
-  $tecnico = $_POST['funcionario'];
+  $tecnico = $_POST['auxiliar'];
   $produto = $_POST['txtproduto'];
   $serie = $_POST['txtserie'];
   $defeito = $_POST['txtdefeito'];
@@ -528,7 +528,7 @@ if(isset($_POST['buttonEditar'])){
     echo "<script language='javascript'> window.alert('Ocorreu um erro ao Editar!'); </script>";
   }else{
     echo "<script language='javascript'> window.alert('Editado com Sucesso!'); </script>";
-    echo "<script language='javascript'> window.location='abrir_orcamentos.php'; </script>";
+    echo "<script language='javascript'> window.location='abrir_orcamentos_admin.php'; </script>";
   }
 
 }
