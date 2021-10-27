@@ -44,30 +44,35 @@ include('conexao.php');
     <!-- Cabeçalho - Fim -->
 
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="dashboard_admin.php"><big><big><i class="fa fa-arrow-left"></i></big></big></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-      <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-        <ul class="navbar-nav mr-auto">
+    <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+    <ul class="navbar-nav mr-auto">
 
-        <a href="listar_orcamentos_admin.php"> <strong>Orçamentos</strong></a> &nbsp;|&nbsp;
-        <a href="listar_os_admin.php"> <strong>Ordem de Serviço</strong></a>
+    <a href="listar_orcamentos_admin.php"> <strong>Orçamentos</strong></a> &nbsp;|&nbsp;
+    <a href="listar_os_admin.php"> <strong>Ordem de Serviço</strong></a>
 
-        </ul>
-        <form class="form-inline my-2 my-lg-0 mr-5">
-          <input name="txtpesquisarcpf" id="txtcpf" class="form-control mr-sm-2" type="search" placeholder="Buscar pelo CPF" aria-label="Pesquisar">
-          <button name="buttonPesquisarCPF" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
-        </form>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-        <form class="form-inline my-2 my-lg-0">
-          <input name="txtpesquisar" class="form-control mr-sm-2" type="search" placeholder="Buscar pelo Nome" aria-label="Pesquisar">
-          <button name="buttonPesquisar" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
-        </form>
-      </div>
-    </nav>
+
+    <a href="#" data-toggle="modal" data-target="#modalExemplo">
+              <i class="nc-icon nc-diamond"></i>
+              <p>Relatório Orçamentos</p>
+          </a> &nbsp; | &nbsp;
+
+          <a href="#" data-toggle="modal" data-target="#modalOS">
+              <i class="nc-icon nc-pin-3"></i>
+              <p>Relatório de OS</p>
+          </a>
+            
+    </ul>
+
+    </div>
+  </nav>
+
+  <div id="area-principal">
+        <div id="area-conteudos">
 
       <!-- RESUMO ORÇAMENTOS -->
         <div class="row">

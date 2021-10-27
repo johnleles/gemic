@@ -13,7 +13,7 @@ $conexao = mysqli_connect(HOST, USUARIO, SENHA, BD) or die ('Não foi possível 
 $url = "http://$_SERVER[HTTP_HOST]/";
 $url_sistema = explode("//", $url);
 if($url_sistema[1] == 'localhost/'){
-	$url = "http://$_SERVER[HTTP_HOST]/sistemaos/";
+	$url = "http://$_SERVER[HTTP_HOST]/gemic/";
 }
 
 $nome_empresa = "GEMIC - Gerenciador de Microempresas";

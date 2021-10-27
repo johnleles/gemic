@@ -64,6 +64,9 @@ include('conexao.php');
       </div>
     </nav>
 
+    <div id="area-principal">
+        <div id="area-conteudos">
+
       <!-- RESUMO ORÇAMENTOS -->
         <div class="row">
           <div class="col-md-6">

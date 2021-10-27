@@ -69,7 +69,8 @@ include('conexao.php');
       </div>
     </nav>
 
-    <br> <br>
+    <div id="area-principal">
+        <div id="area-conteudos">
 
 <div class="content">
   <div class="row">
