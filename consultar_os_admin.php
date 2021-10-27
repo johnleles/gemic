@@ -28,10 +28,11 @@ include('conexao.php');
         </div>
 
         <div id="area-menu">
-            <a href="dashboard.php"> <strong>Dashboard</strong></a>
-            <a href="clientes.php"> <strong>Clientes</strong></a>
-            <a href="servicos.php"> <strong>Serviços</strong></a>
-            <a href="rel_orcamentos.php"> <strong>Relatório</strong></a>
+            <a href="dashboard_admin.php"> <strong>Dashboard</strong></a>
+            <a href="administrativo.php"> <strong>Administrativo</strong></a>
+            <a href="servicos_admin.php"> <strong>Serviços</strong></a>
+            <a href="estoque_admin.php"> <strong>Estoque</strong></a>
+            <a href="financeiro.php"> <strong>Financeiro</strong></a>
             <a href="suporte_admin.php"> <strong>Suporte</strong></a>
             <a href="logout.php"> <strong>Sair</strong></a>
         </div>

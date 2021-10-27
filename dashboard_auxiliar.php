@@ -38,8 +38,10 @@ include('conexao.php');
     </div>
     <!-- Cabeçalho - Fim -->
     
+
+
+    <!-- AREA PRINCIPAL -->
     <div id="area-principal">
-        <div id="area-conteudos">
 
       <div class="content">
         <div class="row">
@@ -120,7 +122,7 @@ include('conexao.php');
                   </div>
                   <div class="col-7 col-md-8">
                     <div class="numbers">
-                      <h3 class="card-category">Aprovação</h3>
+                      <h3 class="card-category">Aguardando</h3>
 
                        <?php 
                   $query = "select * from orcamentos where status = 'Aguardando' order by id asc"; 

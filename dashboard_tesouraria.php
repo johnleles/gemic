@@ -39,38 +39,9 @@ include('conexao.php');
     <!-- Cabeçalho - Fim -->
 
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-  <ul class="navbar-nav mr-auto">
-
-  <a href="#" data-toggle="modal" data-target="#modalExemplo">
-            <i class="nc-icon nc-diamond"></i>
-            <p>Relatório Orçamentos</p>
-        </a> &nbsp; | &nbsp;
-
-        <a href="#" data-toggle="modal" data-target="#modalOS">
-            <i class="nc-icon nc-pin-3"></i>
-            <p>Relatório de OS</p>
-        </a> &nbsp; | &nbsp;
-        
-        <a href="#" data-toggle="modal" data-target="#modalRelMov">
-            <i class="nc-icon nc-bell-55"></i>
-            <p>Relatório de Movimentações</p>
-        </a> &nbsp; | &nbsp;
-        
-        <a href="#" data-toggle="modal" data-target="#modalRelGastos">
-            <i class="nc-icon nc-caps-small"></i>
-            <p>Relatório de Gastos</p>
-        </a>
-          
-        </ul>
-
-      </div>
-    </nav>
-
+    
+    <!-- AREA PRINCIPAL -->
     <div id="area-principal">
-        <div id="area-conteudos">
 
 <div class="content">
   <div class="row">

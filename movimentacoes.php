@@ -50,6 +50,27 @@ $status = 10;
   <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
     <ul class="navbar-nav mr-auto">
       
+    <a href="#" data-toggle="modal" data-target="#modalExemplo">
+            <i class="nc-icon nc-diamond"></i>
+            <p>Relatório Orçamentos</p>
+        </a> &nbsp; | &nbsp;
+
+        <a href="#" data-toggle="modal" data-target="#modalOS">
+            <i class="nc-icon nc-pin-3"></i>
+            <p>Relatório de OS</p>
+        </a> &nbsp; | &nbsp;
+        
+        <a href="#" data-toggle="modal" data-target="#modalRelMov">
+            <i class="nc-icon nc-bell-55"></i>
+            <p>Relatório de Movimentações</p>
+        </a> &nbsp; | &nbsp;
+        
+        <a href="#" data-toggle="modal" data-target="#modalRelGastos">
+            <i class="nc-icon nc-caps-small"></i>
+            <p>Relatório de Gastos</p>
+        </a>
+          
+  
     </ul>
     <form class="form-inline my-2 my-lg-0">
 
