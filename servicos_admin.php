@@ -55,11 +55,11 @@ include('conexao.php');
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-
+    </div>
     <a href="#" data-toggle="modal" data-target="#modalExemplo">
               <i class="nc-icon nc-diamond"></i>
               <p>Relatório Orçamentos</p>
-          </a> &nbsp; | &nbsp;
+          </a> &nbsp;&nbsp;&nbsp;&nbsp;
 
           <a href="#" data-toggle="modal" data-target="#modalOS">
               <i class="nc-icon nc-pin-3"></i>

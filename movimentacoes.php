@@ -29,69 +29,55 @@ $status = 10;
         </div>
 
         <div id="area-menu">
-            <a href="dashboard_tesouraria.php"> <strong>Dashboard</strong></a>
-            <a href="movimentacoes.php"> <strong>Movimentações</strong></a>
-            <a href="receitas.php"> <strong>Receitas</strong></a>
-            <a href="despesas.php"> <strong>Despesas</strong></a>
-            <a href="pagamentos.php"> <strong>Pagamentos</strong></a>
+            <a href="dashboard_auxiliar.php"> <strong>Dashboard</strong></a>
+            <a href="clientes.php"> <strong>Clientes</strong></a>
+            <a href="servicos.php"> <strong>Serviços</strong></a>
+            <a href="estoque.php"> <strong>Estoque</strong></a>
             <a href="suporte.php"> <strong>Suporte</strong></a>
             <a href="logout.php"> <strong>Sair</strong></a>
         </div>
     </div>
     <!-- Cabeçalho - Fim -->
 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
+<div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+<ul class="navbar-nav mr-auto">
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<a href="movimentacoes_admin.php"> <strong>Movimentações</strong></a> &nbsp;|&nbsp;
+<a href="receitas_admin.php"> <strong>Receitas</strong></a> &nbsp;|&nbsp;
+<a href="despesas_admin.php"> <strong>Despesas</strong></a> &nbsp;|&nbsp;
+<a href="pagamentos_admin.php"> <strong>Pagamentos</strong></a>
 
-  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-    <ul class="navbar-nav mr-auto">
-      
-    <a href="#" data-toggle="modal" data-target="#modalExemplo">
-            <i class="nc-icon nc-diamond"></i>
-            <p>Relatório Orçamentos</p>
-        </a> &nbsp; | &nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;
 
-        <a href="#" data-toggle="modal" data-target="#modalOS">
-            <i class="nc-icon nc-pin-3"></i>
-            <p>Relatório de OS</p>
-        </a> &nbsp; | &nbsp;
+<a href="#" data-toggle="modal" data-target="#modalExemplo">
+          <i class="nc-icon nc-diamond"></i>
+          <p>Relatório Orçamentos</p>
+      </a>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#" data-toggle="modal" data-target="#modalOS">
+          <i class="nc-icon nc-pin-3"></i>
+          <p>Relatório de OS</p>
+      </a> 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#" data-toggle="modal" data-target="#modalRelMov">
+          <i class="nc-icon nc-bell-55"></i>
+          <p>Relatório de Movimentações</p>
+      </a>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#" data-toggle="modal" data-target="#modalRelGastos">
+          <i class="nc-icon nc-caps-small"></i>
+          <p>Relatório de Gastos</p>
+      </a>
         
-        <a href="#" data-toggle="modal" data-target="#modalRelMov">
-            <i class="nc-icon nc-bell-55"></i>
-            <p>Relatório de Movimentações</p>
-        </a> &nbsp; | &nbsp;
-        
-        <a href="#" data-toggle="modal" data-target="#modalRelGastos">
-            <i class="nc-icon nc-caps-small"></i>
-            <p>Relatório de Gastos</p>
-        </a>
-          
+      </ul>
+
+    </div>
+  </nav>
   
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-
-      <select class="form-control mr-2" id="category" name="status">
-         <option value="Todos">Todas</option> 
-          <option value="Entrada">Entradas</option> 
-           <option value="Saída">Saídas</option> 
-           
-             
-      </select>
-
-     <input name="dataInicial" class="form-control mr-sm-2" type="date" placeholder="Pesquisar" aria-label="Pesquisar" value="<?php echo date('Y-m-d'); ?>">
-       <input name="dataFinal" class="form-control mr-sm-2" type="date" placeholder="Pesquisar" aria-label="Pesquisar" value="<?php echo date('Y-m-d'); ?>">
-      <button name="buttonPesquisar" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
-    </form>
-  </div>
-</nav>
-
-
-
-
 
 <div class="container">
 
@@ -269,13 +255,269 @@ $status = 10;
                   </div>
                 </div>
               </div>
-
-
-
-
-
-
 </div>
+
+<!--   Core JS Files   -->
+  <script src="assets/js/core/jquery.min.js"></script>
+  <script src="assets/js/core/popper.min.js"></script>
+  <script src="assets/js/core/bootstrap.min.js"></script>
+  <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <!--  Google Maps Plugin    -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <!-- Chart JS -->
+  <script src="assets/js/plugins/chartjs.min.js"></script>
+  <!--  Notifications Plugin    -->
+  <script src="assets/js/plugins/bootstrap-notify.js"></script>
+  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="assets/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
+  <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+  <script src="assets/demo/demo.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
+      demo.initChartsPages();
+    });
+  </script>
+
+
+  <!-- MODAIS -->
+  <div id="modalExemplo" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+         <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              
+              <h4 class="modal-title">Relatório de Orçamentos</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+              <form method="POST" action="rel/rel_orcamentos_data_class.php" target="_blank">
+
+            <div class="row">
+                  <div class="col-md-4">
+                    <label>Status</label>
+                 </div>
+                <div class="col-md-4">
+                  <label>Data Inicial</label>
+                </div>
+                 <div class="col-md-4">
+                  <label>Data Final</label>
+                </div>
+               
+
+            </div>
+
+                <div class="row">
+                  <div class="col-md-4 mt-2">
+                    <select class="form-control" id="category" name="status">
+                     <option value="Todos">Todos</option> 
+                     <option value="Aberto">Aberto</option> 
+                     <option value="Aguardando">Aguardando</option> 
+                     <option value="Aprovado">Aprovado</option> 
+                     <option value="Cancelado">Cancelado</option> 
+                   
+                   </select>
+                 </div>
+                <div class="col-md-4">
+                  <input name="txtdataInicial" class="form-control mt-3" type="date" placeholder="Pesquisar" aria-label="Pesquisar" value="<?php echo date('Y-m-d') ?>">
+                </div>
+                <div class="col-md-4">
+                  <input name="txtdataFinal" class="form-control mt-3 " type="date" placeholder="Pesquisar" aria-label="Pesquisar" value="<?php echo date('Y-m-d') ?>">
+                </div>
+               
+
+            </div>
+          </div>
+                   
+            <div class="modal-footer">
+               <button type="submit" class="btn btn-info mb-3" name="buttonPesquisar">Gerar Relatório</button>
+
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>    
+
+
+
+
+
+ <!-- Modal OS -->
+      <div id="modalOS" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+         <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              
+              <h4 class="modal-title">Relatório de Ordem de Serviços</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+              <form method="POST" action="rel/rel_os_data_class.php" target="_blank">
+
+            <div class="row">
+                  <div class="col-md-4">
+                    <label>Status</label>
+                 </div>
+                <div class="col-md-4">
+                  <label>Data Inicial</label>
+                </div>
+                 <div class="col-md-4">
+                  <label>Data Final</label>
+                </div>
+               
+
+            </div>
+
+                <div class="row">
+                  <div class="col-md-4 mt-2">
+                    <select class="form-control" id="category" name="status">
+                     <option value="Todos">Todos</option> 
+                     <option value="Aberta">Aberta</option> 
+                     <option value="Fechada">Fechada</option> 
+                     <option value="Cancelada">Cancelada</option> 
+                     
+                   
+                   </select>
+                 </div>
+                <div class="col-md-4">
+                  <input name="txtdataInicial" class="form-control mt-3" type="date" placeholder="Pesquisar" aria-label="Pesquisar" value="<?php echo date('Y-m-d') ?>">
+                </div>
+                <div class="col-md-4">
+                  <input name="txtdataFinal" class="form-control mt-3 " type="date" placeholder="Pesquisar" aria-label="Pesquisar" value="<?php echo date('Y-m-d') ?>">
+                </div>
+               
+
+            </div>
+          </div>
+                   
+            <div class="modal-footer">
+               <button type="submit" class="btn btn-info mb-3" name="buttonPesquisar">Gerar Relatório</button>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>    
+
+
+
+
+
+
+
+
+
+ <!-- Modal REL GASTOS -->
+      <div id="modalRelGastos" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+         <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              
+              <h4 class="modal-title">Relatório de Gastos</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+              <form method="POST" action="rel/rel_gastos_data_class.php" target="_blank">
+
+            <div class="row">
+                 
+                <div class="col-md-6">
+                  <label>Data Inicial</label>
+                </div>
+                 <div class="col-md-6">
+                  <label>Data Final</label>
+                </div>
+               
+
+            </div>
+
+                <div class="row">
+                  
+                <div class="col-md-6">
+                  <input name="txtdataInicial" class="form-control mt-3" type="date" placeholder="Pesquisar" aria-label="Pesquisar" value="<?php echo date('Y-m-d') ?>">
+                </div>
+                <div class="col-md-6">
+                  <input name="txtdataFinal" class="form-control mt-3 " type="date" placeholder="Pesquisar" aria-label="Pesquisar" value="<?php echo date('Y-m-d') ?>">
+                </div>
+               
+
+            </div>
+          </div>
+                   
+            <div class="modal-footer">
+               <button type="submit" class="btn btn-info mb-3" name="buttonPesquisar">Gerar Relatório</button>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>    
+
+
+
+
+
+
+ <!-- Modal MOVIMENTACOES -->
+      <div id="modalRelMov" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+         <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              
+              <h4 class="modal-title">Relatório de Movimentações</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+              <form method="POST" action="rel/rel_mov_data_class.php" target="_blank">
+
+            <div class="row">
+                  <div class="col-md-4">
+                    <label>Tipo</label>
+                 </div>
+                <div class="col-md-4">
+                  <label>Data Inicial</label>
+                </div>
+                 <div class="col-md-4">
+                  <label>Data Final</label>
+                </div>
+               
+
+            </div>
+
+                <div class="row">
+                  <div class="col-md-4 mt-2">
+                    <select class="form-control" id="category" name="tipo">
+                     <option value="Todas">Todas</option> 
+                     <option value="Entrada">Entradas</option> 
+                     <option value="Saída">Saídas</option> 
+                     
+                     
+                   
+                   </select>
+                 </div>
+                <div class="col-md-4">
+                  <input name="txtdataInicial" class="form-control mt-3" type="date" placeholder="Pesquisar" aria-label="Pesquisar" value="<?php echo date('Y-m-d') ?>">
+                </div>
+                <div class="col-md-4">
+                  <input name="txtdataFinal" class="form-control mt-3 " type="date" placeholder="Pesquisar" aria-label="Pesquisar" value="<?php echo date('Y-m-d') ?>">
+                </div>
+               
+
+            </div>
+          </div>
+                   
+            <div class="modal-footer">
+               <button type="submit" class="btn btn-info mb-3" name="buttonPesquisar">Gerar Relatório</button>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
             <?php
