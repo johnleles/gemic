@@ -22,61 +22,45 @@ $status = 10;
 
 <body>
 
-    <!-- Cabeçalho - Início -->
-    <div id="area-cabecalho">
+<!-- Cabeçalho - Início -->
+<div id="area-cabecalho">
         <div id="area-logo">
             <h1> GE<span class="branco">MIC</span> </h1>
         </div>
 
         <div id="area-menu">
-            <a href="dashboard_auxiliar.php"> <strong>Dashboard</strong></a>
-            <a href="clientes.php"> <strong>Clientes</strong></a>
-            <a href="servicos.php"> <strong>Serviços</strong></a>
-            <a href="estoque.php"> <strong>Estoque</strong></a>
-            <a href="suporte.php"> <strong>Suporte</strong></a>
+            <a href="dashboard_tesouraria.php"> <strong>Dashboard</strong></a>
+            <a href="movimentacoes.php"> <strong>Movimentações</strong></a>
+            <a href="receitas.php"> <strong>Receitas</strong></a>
+            <a href="despesas.php"> <strong>Despesas</strong></a>
+            <a href="pagamentos.php"> <strong>Pagamentos</strong></a>
+            <a href="suporte_tesouraria.php"> <strong>Suporte</strong></a>
             <a href="logout.php"> <strong>Sair</strong></a>
         </div>
     </div>
     <!-- Cabeçalho - Fim -->
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="dashboard_tesouraria.php"><big><big><i class="fa fa-arrow-left"></i></big></big></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+          <ul class="navbar-nav mr-auto">
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-<div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-<ul class="navbar-nav mr-auto">
-
-<a href="movimentacoes_admin.php"> <strong>Movimentações</strong></a> &nbsp;|&nbsp;
-<a href="receitas_admin.php"> <strong>Receitas</strong></a> &nbsp;|&nbsp;
-<a href="despesas_admin.php"> <strong>Despesas</strong></a> &nbsp;|&nbsp;
-<a href="pagamentos_admin.php"> <strong>Pagamentos</strong></a>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;
-
-<a href="#" data-toggle="modal" data-target="#modalExemplo">
-          <i class="nc-icon nc-diamond"></i>
-          <p>Relatório Orçamentos</p>
-      </a>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a href="#" data-toggle="modal" data-target="#modalOS">
-          <i class="nc-icon nc-pin-3"></i>
-          <p>Relatório de OS</p>
-      </a> 
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a href="#" data-toggle="modal" data-target="#modalRelMov">
-          <i class="nc-icon nc-bell-55"></i>
-          <p>Relatório de Movimentações</p>
-      </a>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a href="#" data-toggle="modal" data-target="#modalRelGastos">
-          <i class="nc-icon nc-caps-small"></i>
-          <p>Relatório de Gastos</p>
-      </a>
-        
-      </ul>
-
-    </div>
-  </nav>
+      </div>       
+          <a href="#" data-toggle="modal" data-target="#modalRelMov">
+              <i class="nc-icon nc-bell-55"></i>
+              <p>Relatório de Movimentações</p>
+          </a> &nbsp;&nbsp;&nbsp;&nbsp;
+          
+          <a href="#" data-toggle="modal" data-target="#modalRelGastos">
+              <i class="nc-icon nc-caps-small"></i>
+              <p>Relatório de Gastos</p>
+          </a>
+            
+          </ul>
+    </nav>
   
 
 <div class="container">

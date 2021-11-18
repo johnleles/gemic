@@ -638,6 +638,8 @@ include('conexao.php');
         </div>
       </div> 
 
+      
+
     <!-- Área - Rodapé -->
     <div id="rodape">
         Todos os direitos reservados.

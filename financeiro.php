@@ -48,30 +48,20 @@ include('conexao.php');
   <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
   <ul class="navbar-nav mr-auto">
 
-  <a href="movimentacoes_admin.php"> <strong>Movimentações</strong></a> &nbsp;|&nbsp;
-  <a href="receitas_admin.php"> <strong>Receitas</strong></a> &nbsp;|&nbsp;
-  <a href="despesas_admin.php"> <strong>Despesas</strong></a> &nbsp;|&nbsp;
+  <a href="movimentacoes_admin.php"> <strong>Movimentações</strong></a> &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="receitas_admin.php"> <strong>Receitas</strong></a> &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="despesas_admin.php"> <strong>Despesas</strong></a> &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="pagamentos_admin.php"> <strong>Pagamentos</strong></a>
 
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-
-  <a href="#" data-toggle="modal" data-target="#modalExemplo">
-            <i class="nc-icon nc-diamond"></i>
-            <p>Relatório Orçamentos</p>
-        </a> &nbsp; | &nbsp;
-
-        <a href="#" data-toggle="modal" data-target="#modalOS">
-            <i class="nc-icon nc-pin-3"></i>
-            <p>Relatório de OS</p>
-        </a> &nbsp; | &nbsp;
-        
+  </div>
         <a href="#" data-toggle="modal" data-target="#modalRelMov">
             <i class="nc-icon nc-bell-55"></i>
             <p>Relatório de Movimentações</p>
-        </a> &nbsp; | &nbsp;
+        </a> &nbsp;&nbsp;&nbsp;&nbsp;
         
         <a href="#" data-toggle="modal" data-target="#modalRelGastos">
             <i class="nc-icon nc-caps-small"></i>

@@ -137,9 +137,7 @@ include('conexao.php');
 
                           while($res_1 = mysqli_fetch_array($result)){
                             $nome = $res_1["produto"];
-                            $valor = $res_1["valor"];
-                            $quantidade = $res_1["quantidade"];
-                           
+                            $valor = $res_1["valor"];                           
                             $id = $res_1["id"];
 
                            
@@ -150,7 +148,6 @@ include('conexao.php');
 
                              <td><?php echo $nome; ?></td> 
                              <td><?php echo $valor; ?></td>
-                             <td><?php echo $quantidade; ?></td>
                             
                              <td>
                              <a class="text-info" href="estoque.php?func=edita&id=<?php echo $id; ?>"><i class="fa fa-pencil-square-o"></i></a>
@@ -200,11 +197,7 @@ include('conexao.php');
                 <label for="id_produto">Valor</label>
                 <input type="text" class="form-control mr-2" name="txtvalor" placeholder="Valor" required>
               </div>
-              <div class="form-group">
-                <label for="id_produto">Quantidade</label>
-                <input type="number" class="form-control mr-2" name="txtquantidade" placeholder="Quantidade" required>
-              </div>
-             
+        
             </div>
                    
             <div class="modal-footer">
@@ -234,11 +227,9 @@ include('conexao.php');
 if(isset($_POST['button'])){
   $nome = $_POST['txtnome'];
   $valor = $_POST['txtvalor'];
-  $quantidade = $_POST['txtquantidade'];
    $valor = str_replace(',', '.', $valor);
- 
 
-  //VERIFICAR SE O CARGO JÁ ESTÁ CADASTRADO
+  //VERIFICAR SE O PRODUTO JÁ ESTÁ CADASTRADO
   $query_verificar = "select * from produtos where produto = '$nome' ";
 
   $result_verificar = mysqli_query($conexao, $query_verificar);
@@ -309,10 +300,6 @@ $result = mysqli_query($conexao, $query);
                 <label for="id_produto">Valor</label>
                 <input type="text" class="form-control mr-2" name="txtvalor" placeholder="Valor" value="<?php echo $res_1["valor"] ?>" required>
               </div>
-              <div class="form-group">
-                <label for="id_produto">Quantidade</label>
-                <input type="number" class="form-control mr-2" name="txtquantidade" placeholder="Quantidade" value="<?php echo $res_1["quantidade"] ?>" required>
-              </div>
               
             </div>
                    
@@ -336,9 +323,7 @@ $result = mysqli_query($conexao, $query);
 if(isset($_POST['buttonEditar'])){
   $nome = $_POST['txtnome'];
    $valor = $_POST['txtvalor'];
-   $quantidade = $_POST['txtquantidade'];
     $valor = str_replace(',', '.', $valor);
-    $quantidade = str_replace(',', '.', $quantidade);
 
     //VERIFICAR SE O CARGO JÁ ESTÁ CADASTRADO
   if($res_1["produto"] != $nome){

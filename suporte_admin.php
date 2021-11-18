@@ -55,7 +55,7 @@
                     <span class="login_input_border"></span>
                     <input class="login_input" type="text" placeholder="Descrição"> <br> <br>
                     <span class="login_input_border"></span>
-                    <input class="login_input" type="file">
+                    <input class="login_input" type="file"> <br>
                     <button class="login_submit">Enviar</button>
                 </form>
             </div>

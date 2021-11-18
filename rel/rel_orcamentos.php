@@ -77,7 +77,7 @@ $valor_total = number_format($res_1['valor_total'], 2, ',', '.');
 	
 	<div class="row">
 			<div class="col-sm-4" style="margin-left:8px">	
-			<img src="<?php echo $url ?>imagens/gemic_logo.jpeg" width="250px">
+				<img src="<?php echo $url ?>imagens/gemic_logo.jpeg" width="250px">
 			</div>
 			<div class="col-sm-6" align="right">	
 			 <span class="titulo"><b><big><?php echo mb_strtoupper($nome_empresa) ?></big></b></span><br>

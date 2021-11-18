@@ -164,7 +164,7 @@ include('conexao.php');
                              
                            
                              <td>
-                             <a title="Fechar Orçamento" class="btn btn-success" href="fechar_orcamentos.php?func=edita&id=<?php echo $id; ?>"><i class="fa fa-check-square"></i></a>
+                             <a title="Fechar Orçamento" class="btn btn-success" href="fechar_orcamentos_admin.php?func=edita&id=<?php echo $id; ?>"><i class="fa fa-check-square"></i></a>
 
                             
 
@@ -296,7 +296,7 @@ if($result_editar == ''){
   echo "<script language='javascript'> window.alert('Ocorreu um erro ao Editar!'); </script>";
 }else{
     echo "<script language='javascript'> window.alert('Editado com Sucesso!'); </script>";
-    echo "<script language='javascript'> window.location='fechar_orcamentos.php'; </script>";
+    echo "<script language='javascript'> window.location='fechar_orcamentos_admin.php'; </script>";
 }
 
 }

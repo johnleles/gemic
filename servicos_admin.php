@@ -49,17 +49,14 @@ include('conexao.php');
     <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
     <ul class="navbar-nav mr-auto">
 
-    <a href="listar_orcamentos_admin.php"> <strong>Orçamentos</strong></a> &nbsp;|&nbsp;
+    <a href="listar_orcamentos_admin.php"> <strong>Orçamentos</strong></a> &nbsp;&nbsp;&nbsp;&nbsp;
     <a href="listar_os_admin.php"> <strong>Ordem de Serviço</strong></a>
-
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
     </div>
     <a href="#" data-toggle="modal" data-target="#modalExemplo">
               <i class="nc-icon nc-diamond"></i>
               <p>Relatório Orçamentos</p>
-          </a> &nbsp;&nbsp;&nbsp;&nbsp;
+          </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
           <a href="#" data-toggle="modal" data-target="#modalOS">
               <i class="nc-icon nc-pin-3"></i>

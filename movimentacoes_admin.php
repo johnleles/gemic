@@ -40,44 +40,28 @@ $status = 10;
     </div>
     <!-- Cabeçalho - Fim -->
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+          <ul class="navbar-nav mr-auto">
 
-<div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-<ul class="navbar-nav mr-auto">
+          <a href="movimentacoes_admin.php"> <strong>Movimentações</strong></a> &nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="receitas_admin.php"> <strong>Receitas</strong></a> &nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="despesas_admin.php"> <strong>Despesas</strong></a> &nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="pagamentos_admin.php"> <strong>Pagamentos</strong></a>
 
-<a href="movimentacoes_admin.php"> <strong>Movimentações</strong></a> &nbsp;|&nbsp;
-<a href="receitas_admin.php"> <strong>Receitas</strong></a> &nbsp;|&nbsp;
-<a href="despesas_admin.php"> <strong>Despesas</strong></a> &nbsp;|&nbsp;
-<a href="pagamentos_admin.php"> <strong>Pagamentos</strong></a>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;
-
-<a href="#" data-toggle="modal" data-target="#modalExemplo">
-          <i class="nc-icon nc-diamond"></i>
-          <p>Relatório Orçamentos</p>
-      </a>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a href="#" data-toggle="modal" data-target="#modalOS">
-          <i class="nc-icon nc-pin-3"></i>
-          <p>Relatório de OS</p>
-      </a> 
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a href="#" data-toggle="modal" data-target="#modalRelMov">
-          <i class="nc-icon nc-bell-55"></i>
-          <p>Relatório de Movimentações</p>
-      </a>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a href="#" data-toggle="modal" data-target="#modalRelGastos">
-          <i class="nc-icon nc-caps-small"></i>
-          <p>Relatório de Gastos</p>
-      </a>
-        
-      </ul>
-
-    </div>
-  </nav>
+      </div>       
+          <a href="#" data-toggle="modal" data-target="#modalRelMov">
+              <i class="nc-icon nc-bell-55"></i>
+              <p>Relatório de Movimentações</p>
+          </a> &nbsp;&nbsp;&nbsp;&nbsp;
+          
+          <a href="#" data-toggle="modal" data-target="#modalRelGastos">
+              <i class="nc-icon nc-caps-small"></i>
+              <p>Relatório de Gastos</p>
+          </a>
+            
+          </ul>
+    </nav>
 
 <div class="container">
 

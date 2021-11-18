@@ -18,8 +18,9 @@ session_start();
 <body>
 
     <main class="login">
-        <div class="login_container"> <br> <br>
-            <h1 class="login_titulo"> GEMIC</h1>
+        <div class="login_container">
+        <!--    <h1 class="login_titulo"> GEMIC</h1> -->
+        <img src="imagens/gemic_logo_index.png" width="180px">
             <form action="login.php" method="post">
                 <input class="login_input" type="text" name="usuario" placeholder="Usuário" id="user">
                 <span class="login_input_border"></span>

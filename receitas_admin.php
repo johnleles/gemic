@@ -39,10 +39,14 @@ include('conexao.php');
     <!-- Cabeçalho - Fim -->
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="financeiro.php"><big><big><i class="fa fa-arrow-left"></i></big></big></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+        <ul class="navbar-nav mr-auto">
+
+        <a href="movimentacoes_admin.php"> <strong>Movimentações</strong></a> &nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="receitas_admin.php"> <strong>Receitas</strong></a> &nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="despesas_admin.php"> <strong>Despesas</strong></a> &nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="pagamentos_admin.php"> <strong>Pagamentos</strong></a>
+  </div>
 
   <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
     <ul class="navbar-nav mr-auto">
@@ -133,8 +137,7 @@ include('conexao.php');
                             <th>
                             Status
                           </th>
-                           
-                            <th>
+                          <th>
                             Ações
                           </th>
                         </thead>
@@ -168,7 +171,7 @@ include('conexao.php');
                              <td>
                             
 
-                             <a class="btn btn-danger" href="receitas.php?func=deleta&id=<?php echo $id; ?>&produto=<?php echo $produto; ?>"><i class="fa fa-minus-square"></i></a>
+                             <a class="btn btn-danger" href="receitas_admin.php?func=deleta&id=<?php echo $id; ?>&produto=<?php echo $produto; ?>"><i class="fa fa-minus-square"></i></a>
 
                              </td>
                             </tr>
@@ -226,8 +229,7 @@ include('conexao.php');
                        }
                    }
                   ?>
-                  </select>
-
+                  </select> <br>
               </div>
              
               
@@ -282,7 +284,7 @@ include('conexao.php');
             
           </p>
         </div>
-      </div>   
+      </div>  
 
     <!-- Área - Rodapé -->
     <div id="rodape">
@@ -332,7 +334,7 @@ if($result == ''){
   echo "<script language='javascript'> window.alert('Ocorreu um erro ao Cadastrar!'); </script>";
 }else{
     echo "<script language='javascript'> window.alert('Salvo com Sucesso!'); </script>";
-    echo "<script language='javascript'> window.location='receitas.php'; </script>";
+    echo "<script language='javascript'> window.location='receitas_admin.php'; </script>";
 }
 
 }
@@ -358,7 +360,7 @@ if(@$_GET['func'] == 'deleta'){
   mysqli_query($conexao, $query_produto);
 
 
-  echo "<script language='javascript'> window.location='receitas.php'; </script>";
+  echo "<script language='javascript'> window.location='receitas_admin.php'; </script>";
 }
 ?>
 

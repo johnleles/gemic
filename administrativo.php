@@ -49,8 +49,8 @@ include('conexao.php');
 
     <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
         <ul class="navbar-nav mr-auto">
-        <a href="usuarios.php"> <strong>Usuários</strong></a> &nbsp;|&nbsp;
-        <a href="funcionarios.php"> <strong>Funcionários</strong></a> &nbsp;|&nbsp;
+        <a href="usuarios.php"> <strong>Usuários</strong></a> &nbsp;&nbsp;&nbsp;
+        <a href="funcionarios.php"> <strong>Funcionários</strong></a> &nbsp;&nbsp;&nbsp;
         <a href="cargos.php"> <strong>Cargos</strong></a>
         </ul>
     </div>
@@ -307,17 +307,17 @@ $result = mysqli_query($conexao, $query);
 
 
 //CADASTRANDO O CLIENTE COMO USUÁRIO
-$query = "INSERT into usuarios (nome, usuario, senha, cargo, id_funcionario) VALUES ('$nome', '$cpf', '$cpf', 'Cliente', '-1' )";
+//  $query = "INSERT into usuarios (nome, usuario, senha, cargo, id_funcionario) VALUES ('$nome', '$cpf', '$cpf', 'Cliente', '-1' )";
 
-$result = mysqli_query($conexao, $query);
+//  $result = mysqli_query($conexao, $query);
 
 
-if($result == ''){
-  echo "<script language='javascript'> window.alert('Ocorreu um erro ao Cadastrar!'); </script>";
-}else{
-    echo "<script language='javascript'> window.alert('Salvo com Sucesso!'); </script>";
-    echo "<script language='javascript'> window.location='administrativo.php'; </script>";
-}
+//  if($result == ''){
+//    echo "<script language='javascript'> window.alert('Ocorreu um erro ao Cadastrar!'); </script>";
+//  }else{
+//    echo "<script language='javascript'> window.alert('Salvo com Sucesso!'); </script>";
+//    echo "<script language='javascript'> window.location='administrativo.php'; </script>";
+//}
 
 }
 ?>

@@ -40,10 +40,19 @@ include('conexao.php');
     <!-- Cabeçalho - Fim -->
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="financeiro.php"><big><big><i class="fa fa-arrow-left"></i></big></big></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+        <ul class="navbar-nav mr-auto">
+
+        <a href="movimentacoes_admin.php"> <strong>Movimentações</strong></a> &nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="receitas_admin.php"> <strong>Receitas</strong></a> &nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="despesas_admin.php"> <strong>Despesas</strong></a> &nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="pagamentos_admin.php"> <strong>Pagamentos</strong></a>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  </div>
 
   <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
     <ul class="navbar-nav mr-auto">
@@ -162,7 +171,7 @@ include('conexao.php');
                              <td>
                             
 
-                             <a class="btn btn-danger" href="pagamentos.php?func=deleta&id=<?php echo $id; ?>"><i class="fa fa-minus-square"></i></a>
+                             <a class="btn btn-danger" href="pagamentos_admin.php?func=deleta&id=<?php echo $id; ?>"><i class="fa fa-minus-square"></i></a>
 
                              </td>
                             </tr>
@@ -321,7 +330,7 @@ if($result == ''){
   echo "<script language='javascript'> window.alert('Ocorreu um erro ao Cadastrar!'); </script>";
 }else{
     echo "<script language='javascript'> window.alert('Salvo com Sucesso!'); </script>";
-    echo "<script language='javascript'> window.location='pagamentos.php'; </script>";
+    echo "<script language='javascript'> window.location='pagamentos_admin.php'; </script>";
 }
 
 }
@@ -338,7 +347,7 @@ if(@$_GET['func'] == 'deleta'){
   $query = "DELETE FROM movimentacoes where movimento = 'Pagamento' and id_movimento = '$id'";
   mysqli_query($conexao, $query);
 
-  echo "<script language='javascript'> window.location='pagamentos.php'; </script>";
+  echo "<script language='javascript'> window.location='pagamentos_admin.php'; </script>";
 }
 ?>
 

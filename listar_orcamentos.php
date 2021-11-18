@@ -182,9 +182,9 @@ include('conexao.php');
 
 
          <td>
-           <a class="btn btn-info" href="abrir_orcamentos.php?func=edita&id=<?php echo $id; ?>"><i class="fa fa-pencil-square-o"></i></a>
+           <a class="btn btn-info" href="listar_orcamentos.php?func=edita&id=<?php echo $id; ?>"><i class="fa fa-pencil-square-o"></i></a>
 
-           <a class="btn btn-danger" href="abrir_orcamentos.php?func=deleta&id=<?php echo $id; ?>"><i class="fa fa-minus-square"></i></a>
+           <a class="btn btn-danger" href="listar_orcamentos.php?func=deleta&id=<?php echo $id; ?>"><i class="fa fa-minus-square"></i></a>
 
          </td>
        </tr>
@@ -358,7 +358,7 @@ if($result == ''){
   echo "<script language='javascript'> window.alert('Ocorreu um erro ao Cadastrar!'); </script>";
 }else{
   echo "<script language='javascript'> window.alert('Salvo com Sucesso!'); </script>";
-  echo "<script language='javascript'> window.location='abrir_orcamentos.php'; </script>";
+  echo "<script language='javascript'> window.location='listar_orcamentos.php'; </script>";
 }
 
 }
@@ -371,7 +371,7 @@ if(@$_GET['func'] == 'deleta'){
 $id = $_GET['id'];
 $query = "DELETE FROM orcamentos where id = '$id'";
 mysqli_query($conexao, $query);
-echo "<script language='javascript'> window.location='abrir_orcamentos.php'; </script>";
+echo "<script language='javascript'> window.location='listar_orcamentos.php'; </script>";
 }
 ?>
 
@@ -524,7 +524,7 @@ if($result_editar == ''){
   echo "<script language='javascript'> window.alert('Ocorreu um erro ao Editar!'); </script>";
 }else{
   echo "<script language='javascript'> window.alert('Editado com Sucesso!'); </script>";
-  echo "<script language='javascript'> window.location='abrir_orcamentos.php'; </script>";
+  echo "<script language='javascript'> window.location='listar_orcamentos.php'; </script>";
 }
 
 }

@@ -202,9 +202,9 @@ if($nivel == 'Administrador'){
                              
                            
                              <td>
-                             <a title="Concluir Serviço" class="btn btn-success" href="os_abertas.php?func=edita&id=<?php echo $id; ?>&valor=<?php echo $valor_total; ?>"><i class="fa fa-check-square"></i></a>
+                             <a title="Concluir Serviço" class="btn btn-success" href="abrir_os_admin.php?func=edita&id=<?php echo $id; ?>&valor=<?php echo $valor_total; ?>"><i class="fa fa-check-square"></i></a>
 
-                             <a class="btn btn-danger <?php echo $classe ?>" href="os_abertas.php?func=deleta&id=<?php echo $id; ?>&produto=<?php echo $produto; ?>"><i class="fa fa-minus-square"></i></a>
+                             <a class="btn btn-danger <?php echo $classe ?>" href="abrir_os_admin.php?func=deleta&id=<?php echo $id; ?>&produto=<?php echo $produto; ?>"><i class="fa fa-minus-square"></i></a>
 
                              </td>
                             </tr>
@@ -251,7 +251,7 @@ if(@$_GET['func'] == 'deleta'){
 
   if($nivel != 'Administrador'){
     
-     echo "<script language='javascript'> window.location='os_abertas.php'; </script>";
+     echo "<script language='javascript'> window.location='abrir_os_admin.php'; </script>";
      exit();
   }
 
@@ -267,7 +267,7 @@ if(@$_GET['func'] == 'deleta'){
   mysqli_query($conexao, $query_produto);
 
 
-  echo "<script language='javascript'> window.location='os_abertas.php'; </script>";
+  echo "<script language='javascript'> window.location='abrir_os_admin.php'; </script>";
 }
 ?>
 

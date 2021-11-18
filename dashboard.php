@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="css/estilomain.css">
 </head>
 
 <body>
@@ -21,19 +22,33 @@
         </div>
 
         <div id="area-menu">
-            <a href="dashboard_auxiliar.php"> <strong>Dashboard</strong></a>
-            <a href="clientes.php"> <strong>Clientes</strong></a>
-            <a href="servicos.php"> <strong>Serviços</strong></a>
-            <a href="rel_orcamentos.php"> <strong>Relatório</strong></a>
-            <a href="suporte.php"> <strong>Suporte</strong></a>
+            <a href="dashboard.php"> <strong>Dashboard</strong></a>
             <a href="logout.php"> <strong>Sair</strong></a>
         </div>
     </div>
     <!-- Cabeçalho - Fim -->
 
-    <img width="100%" src="imagens/imagem-tec.jpg">
-    
-    <!-- AQUI TERÁ UM CARROSSEL -->
+    <!-- class banner e barra de navegação -->
+    <div class="banner">
+        <div class="barranavegacao">
+            <img src="" class="logo">
+        </div>
+        <!--class content e titulo -->
+        <div class="content">
+            <div class="titulo">
+                Gerencie sua microempresa
+                <div class="slide">
+                    <div>HOJE</div>
+                    <div>FÁCIL</div>
+                    <div>RÁPIDO</div>
+                </div>
+            </div>
+            <!--texto -->
+            <p> Empreender é desafiante. E é preciso pensar nas várias etapas do negócio para que ele tenha um crescimento sustentável. <br> Use o Website GEMIC para gerenciar sua Microempresa nessa jornada. </p>
+            <!--botão ir para tela de cadastro -->
+            <!---- <button type="button"> Quero me cadastrar! </button> -->
+        </div>
+    </div>
 
     <!-- Área - Rodapé -->
     <div id="rodape">

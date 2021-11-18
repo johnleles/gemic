@@ -47,6 +47,14 @@ include('conexao.php');
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
       <span class="navbar-toggler-icon"></span>
     </button>
+    
+    <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+        <ul class="navbar-nav mr-auto">
+        <a href="usuarios.php"> <strong>Usuários</strong></a> &nbsp;&nbsp;&nbsp;
+        <a href="funcionarios.php"> <strong>Funcionários</strong></a> &nbsp;&nbsp;&nbsp;
+        <a href="cargos.php"> <strong>Cargos</strong></a>
+        </ul>
+    </div>
 
       <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
         <ul class="navbar-nav mr-auto">

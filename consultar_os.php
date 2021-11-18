@@ -386,7 +386,7 @@ if($result == ''){
   echo "<script language='javascript'> window.alert('Ocorreu um erro ao Cadastrar!'); </script>";
 }else{
     echo "<script language='javascript'> window.alert('Salvo com Sucesso!'); </script>";
-    echo "<script language='javascript'> window.location='abrir_orcamentos.php'; </script>";
+    echo "<script language='javascript'> window.location='listar_orcamentos.php'; </script>";
 }
 
 }
